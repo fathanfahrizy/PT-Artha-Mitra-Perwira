@@ -10,8 +10,8 @@
  * CSS  : class .safe-bottom ada di src/index.css (safe area iPhone)
  */
 import { FaArrowUp, FaChevronRight } from 'react-icons/fa6';
-import { FEATURES, QUICK_LINKS, PRODUCT_LINKS } from '../data/footerData';
-import { FOOTER_CONTACT_INFO, SOCIAL_LINKS } from '../data/contactData';
+import { FEATURES, QUICK_LINKS, PRODUCT_LINKS } from '../../data/footerData';
+import { FOOTER_CONTACT_INFO, SOCIAL_LINKS } from '../../data/contactData';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

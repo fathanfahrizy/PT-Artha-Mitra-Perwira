@@ -9,7 +9,7 @@
  */
 import { useState, useEffect, useRef } from 'react';
 import { FaBars, FaXmark, FaChevronDown } from 'react-icons/fa6';
-import { navLinks, MENU_CATEGORIES, MENU_APPLICATIONS, waLink } from '../data/navigationData';
+import { navLinks, MENU_CATEGORIES, MENU_APPLICATIONS, waLink } from '../../data/navigationData';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

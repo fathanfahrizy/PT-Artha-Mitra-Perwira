@@ -10,7 +10,7 @@
  * CSS     : class .flip-card dkk. ada di src/index.css
  */
 import { useState } from 'react';
-import { waLink } from '../data/navigationData';
+import { waLink } from '../../data/navigationData';
 
 export default function ProductCard({ prod }) {
   const [isFlipped, setIsFlipped] = useState(false);
