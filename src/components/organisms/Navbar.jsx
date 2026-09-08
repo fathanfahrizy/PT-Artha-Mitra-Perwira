@@ -10,6 +10,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { FaBars, FaXmark, FaChevronDown } from 'react-icons/fa6';
 import { navLinks, MENU_CATEGORIES, MENU_APPLICATIONS, waLink } from '../../data/navigationData';
+import { Button } from '../atoms/Button';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,15 +83,15 @@ export default function Navbar() {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-            <a
+            <Button
               href="https://wa.me/6281315669699"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#c2182b] text-white px-[16px] lg:px-[20px] py-[10px] rounded-[6px] font-semibold text-[0.85rem] lg:text-[0.9rem] hover:bg-[#a01526] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="px-[16px] lg:px-[20px] py-[10px] text-[0.85rem] lg:text-[0.9rem] hover:scale-105"
               aria-label="Contact us via WhatsApp"
             >
               Hubungi Kami
-            </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -130,14 +131,14 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-[10px] px-[15px]">
-              <a
+              <Button
                 href="https://wa.me/6281315669699"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-[#c2182b] text-white px-[20px] py-[10px] rounded-[6px] font-semibold text-[0.9rem] text-center hover:bg-[#a01526] transition-all duration-300"
+                className="w-full px-[20px] py-[10px] text-[0.9rem]"
               >
                 Hubungi Kami
-              </a>
+              </Button>
             </li>
           </ul>
         )}
@@ -158,18 +159,20 @@ export default function Navbar() {
 
             {/* Tabs Range / Application */}
             <div className="flex flex-wrap gap-[10px] mb-[25px]">
-              <button
+              <Button
+                variant={activeTab === 'range' ? 'active' : 'ghost'}
                 onClick={() => setActiveTab('range')}
-                className={`px-[20px] md:px-[30px] py-[10px] md:py-[12px] text-[0.85rem] md:text-[0.9rem] font-bold rounded-[4px] transition-colors ${activeTab === 'range' ? 'bg-[#c2182b] text-white' : 'bg-[#ececec] text-[#0a1428] hover:bg-[#e2e8f0]'}`}
+                className="px-[20px] md:px-[30px] py-[10px] md:py-[12px] text-[0.85rem] md:text-[0.9rem] rounded-[4px]"
               >
                 Range Produk
-              </button>
-              <button
+              </Button>
+              <Button
+                variant={activeTab === 'application' ? 'active' : 'ghost'}
                 onClick={() => setActiveTab('application')}
-                className={`px-[20px] md:px-[30px] py-[10px] md:py-[12px] text-[0.85rem] md:text-[0.9rem] font-bold rounded-[4px] transition-colors ${activeTab === 'application' ? 'bg-[#c2182b] text-white' : 'bg-[#ececec] text-[#0a1428] hover:bg-[#e2e8f0]'}`}
+                className="px-[20px] md:px-[30px] py-[10px] md:py-[12px] text-[0.85rem] md:text-[0.9rem] rounded-[4px]"
               >
                 Aplikasi Industri
-              </button>
+              </Button>
             </div>
 
             {activeTab === 'range' ? (
@@ -216,14 +219,14 @@ export default function Navbar() {
                       </div>
                     ))}
                   </div>
-                  <a
+                  <Button
                     href={waLink(activeModel.name)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto inline-block bg-[#c2182b] hover:bg-[#a01526] text-white text-center px-[20px] py-[10px] rounded-[4px] text-[0.85rem] font-bold uppercase tracking-[0.5px] transition-colors"
+                    className="mt-auto px-[20px] py-[10px] rounded-[4px] text-[0.85rem] uppercase tracking-[0.5px]"
                   >
                     Hubungi Marketing
-                  </a>
+                  </Button>
                 </div>
               </div>
             ) : (
@@ -245,14 +248,14 @@ export default function Navbar() {
                 <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[4px] p-[25px] lg:p-[30px] flex flex-col">
                   <h4 className="text-[1.3rem] font-extrabold text-[#0a1428] mb-[10px]">{activeApp.name}</h4>
                   <p className="text-[0.9rem] text-[#64748b] leading-[1.7] mb-[20px]">{activeApp.desc}</p>
-                  <a
+                  <Button
                     href={waLink(`solusi kemasan untuk kebutuhan ${activeApp.name}`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto inline-block bg-[#c2182b] hover:bg-[#a01526] text-white text-center px-[20px] py-[10px] rounded-[4px] text-[0.85rem] font-bold uppercase tracking-[0.5px] transition-colors w-full lg:w-max"
+                    className="mt-auto w-full lg:w-max px-[20px] py-[10px] rounded-[4px] text-[0.85rem] uppercase tracking-[0.5px]"
                   >
                     Hubungi Marketing
-                  </a>
+                  </Button>
                 </div>
               </div>
             )}

@@ -11,6 +11,7 @@
  */
 import { useState } from 'react';
 import { waLink } from '../../data/navigationData';
+import { Button } from '../atoms/Button';
 
 export default function ProductCard({ prod }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -33,21 +34,22 @@ export default function ProductCard({ prod }) {
             <h3 className="text-[1.05rem] sm:text-[1.15rem] font-extrabold text-[#0a1428] mb-2">{prod.title}</h3>
             <p className="text-[0.85rem] sm:text-[0.9rem] text-[#64748b] mb-3.75 sm:mb-5 grow leading-[1.6]">{prod.tagline}</p>
             <div className="flex gap-2.5">
-              <a
+              <Button
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#c2182b] hover:bg-[#a01526] text-white text-center px-2 sm:psm:px-3.75[10px] rounded-sm text-[0.72rem] sm:text-[0.85rem] font-bold uppercase tracking-[0.5px] transition-colors"
+                className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem] uppercase tracking-[0.5px]"
               >
                 Discover
-              </a>
-              <button
+              </Button>
+              <Button
+                variant="outline"
                 onClick={() => setIsFlipped(true)}
-                className="flex-1 bg-white border border-[#0a1428] text-[#0a1428] hover:bg-[#0a1428] hover:text-white px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem] font-bold uppercase tracking-[0.5px] transition-colors"
+                className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem] uppercase tracking-[0.5px]"
                 aria-label={`Quick view ${prod.title}`}
               >
                 Quick View
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -67,21 +69,22 @@ export default function ProductCard({ prod }) {
             ))}
           </div>
           <div className="px-5 sm:px-6.25 py-3.5 sm:py-4.5 bg-[#ececec] flex gap-2.5">
-            <button
+            <Button
+              variant="outline"
               onClick={() => setIsFlipped(false)}
-              className="flex-1 bg-white border border-[#0a1428] text-[#0a1428] hover:bg-[#0a1428] hover:text-white px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem] font-bold transition-colors"
+              className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem]"
               aria-label={`Tutup quick view ${prod.title}`}
             >
               Close
-            </button>
-            <a
+            </Button>
+            <Button
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 bg-[#c2182b] hover:bg-[#a01526] text-white text-center px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem] font-bold transition-colors"
+              className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem]"
             >
               Discover
-            </a>
+            </Button>
           </div>
         </div>
       </div>

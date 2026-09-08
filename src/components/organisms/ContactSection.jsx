@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { FaMagnifyingGlass, FaLocationDot, FaPhone } from 'react-icons/fa6';
 import { CONTACT_ITEMS, SOCIAL_LINKS, LOCATIONS_DATA } from '../../data/contactData';
 import ScrollReveal from '../atoms/ScrollReveal';
+import { Button } from '../atoms/Button';
 
 export default function ContactSection() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -160,14 +161,14 @@ export default function ContactSection() {
             <p className="text-[0.8rem] text-[#64748b] m-0">
               Kunjungan pabrik dilayani pada jam kerja dengan konfirmasi terlebih dahulu kepada tim marketing.
             </p>
-            <a 
+            <Button 
               href={activeLocation.directionUrl} 
               target="_blank" 
               rel="noreferrer" 
-              className="inline-flex items-center justify-center gap-[8px] bg-[#c2182b] hover:bg-[#a01526] text-white px-[22px] py-[10px] rounded-[6px] text-[0.85rem] font-bold uppercase tracking-[1px] transition-colors shadow-sm shrink-0 w-full md:w-auto"
+              className="gap-[8px] px-[22px] py-[10px] text-[0.85rem] uppercase tracking-[1px] shadow-sm shrink-0 w-full md:w-auto"
             >
               <FaLocationDot aria-hidden="true" /> Buka Rute Google Maps
-            </a>
+            </Button>
           </div>
         </div>
       </section>
