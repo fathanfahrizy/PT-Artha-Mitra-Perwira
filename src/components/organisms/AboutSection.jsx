@@ -1,5 +1,6 @@
 import { STATS } from '../../data/homeData';
 import { PixelImage } from '../atoms/PixelImage';
+import { Button } from '../atoms/Button';
 import ScrollReveal from '../atoms/ScrollReveal';
 
 export default function AboutSection() {
@@ -27,6 +28,9 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
+            <Button href="#" className="mt-[15px] w-full px-[16px] lg:px-[20px] py-[10px] text-[0.85rem] lg:text-[0.9rem] hover:scale-105" aria-label="Contact us via WhatsApp">
+              Lihat Lebih Detail
+            </Button>
           </div>
           <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[450px] overflow-hidden rounded-[12px] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] group">
             <PixelImage

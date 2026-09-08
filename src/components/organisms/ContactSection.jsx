@@ -24,9 +24,6 @@ export default function ContactSection() {
             <h2 className="text-[0.8rem] text-[#c2182b] font-bold uppercase tracking-[2px] mb-[6px]">Hubungi Kami</h2>
             <h1 className="text-[1.6rem] md:text-[2rem] font-extrabold text-[#0a1428] m-0">KANTOR & PABRIK</h1>
           </div>
-          <p className="text-[0.9rem] text-[#64748b] max-w-[420px] m-0">
-            Tim marketing kami siap melayani kebutuhan penawaran harga, spesifikasi produk, dan jadwal kunjungan pabrik Anda.
-          </p>
         </div>
 
         {/* CARD 1: INFORMASI KONTAK (Panel biru dongker, grid responsive) */}
