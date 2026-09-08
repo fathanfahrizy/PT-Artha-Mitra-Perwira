@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   GLOBAL STYLES - PT ARTHA MITRA PERWIRA
+   Semua CSS custom project dikumpulkan di file ini (jangan inline di JSX)
+   ========================================================================== */
+
+/* --- Animasi fade-in untuk elemen hero --- */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+/* --- Scrollbar tipis untuk list lokasi di section Kontak --- */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: rgba(10, 20, 40, 0.05); }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #c2182b; border-radius: 4px; }
+
+/* --- Flip Card 3D untuk Quick View product card (components/ProductCard.jsx) --- */
+.flip-card {
+  perspective: 1400px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
