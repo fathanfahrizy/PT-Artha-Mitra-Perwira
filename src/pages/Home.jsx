@@ -3,6 +3,7 @@
  * --------
  * Halaman landing page PT Artha Mitra Perwira.
  * Berisi 4 section: Hero, Produk, Tentang, Kontak & Pabrik.
+ * Responsive penuh: phone (320px+), tablet, iPad, desktop.
  *
  * Konvensi:
  * - Semua konten/data diambil dari src/data/ (tidak hardcode di sini)
@@ -33,23 +34,23 @@ export default function Home() {
     <div className="bg-white text-[#1e293b] leading-[1.6]">
       {/* --- HERO SECTION --- */}
       <ScrollReveal>
-        <section id="beranda" className="pt-[140px] px-[20px] pb-[80px] bg-gradient-to-br from-[#0a1428] to-[#172554] text-white relative overflow-hidden" aria-label="Hero section">
-          <div className="max-w-[1200px] mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-[40px] items-center">
+        <section id="beranda" className="pt-[110px] md:pt-[140px] px-[15px] md:px-[20px] pb-[60px] md:pb-[80px] bg-gradient-to-br from-[#0a1428] to-[#172554] text-white relative overflow-hidden" aria-label="Hero section">
+          <div className="max-w-[1200px] mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-[30px] md:gap-[40px] items-center">
             <div>
-              <h3 className="text-[#eab308] text-[1.1rem] font-bold mb-[15px] uppercase tracking-[1px] animate-fade-in-up">
+              <h3 className="text-[#eab308] text-[0.95rem] md:text-[1.1rem] font-bold mb-[12px] md:mb-[15px] uppercase tracking-[1px] animate-fade-in-up">
                 Kemasan Aman, Produk Nyaman, Bisnis Berkembang!
               </h3>
-              <h1 className="text-[3rem] font-extrabold leading-[1.15] mb-[20px]">
+              <h1 className="text-[2.1rem] sm:text-[2.6rem] lg:text-[3rem] font-extrabold leading-[1.15] mb-[16px] md:mb-[20px]">
                 SOLUSI KEMASAN <span className="text-[#eab308] inline-block hover:scale-110 transition-transform duration-300 cursor-default">KARTON</span> BERKUALITAS UNTUK BISNIS ANDA
               </h1>
-              <p className="text-[#cbd5e1] text-[1.05rem] mb-[30px]">
+              <p className="text-[#cbd5e1] text-[0.95rem] md:text-[1.05rem] mb-[25px] md:mb-[30px]">
                 Kami menyediakan produk karton berkualitas tinggi dengan harga kompetitif dan layanan terbaik untuk mendukung kebutuhan industri Anda.
               </p>
-              <div className="grid grid-cols-3 gap-[15px]">
+              <div className="grid grid-cols-3 gap-[10px] md:gap-[15px]">
                 {HERO_BADGES.map((badge, idx) => (
-                  <div key={idx} className="bg-white/10 border border-white/15 p-[15px_10px] rounded-[8px] text-center hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 cursor-default group" role="article" aria-label={badge.text}>
-                    <badge.icon className="text-[1.5rem] text-[#c2182b] bg-white w-[40px] h-[40px] p-[8px] rounded-full mx-auto mb-[10px] group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                    <span className="block text-[0.8rem] font-semibold">{badge.text}</span>
+                  <div key={idx} className="bg-white/10 border border-white/15 p-[10px_6px] md:p-[15px_10px] rounded-[8px] text-center hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 cursor-default group" role="article" aria-label={badge.text}>
+                    <badge.icon className="text-[1.2rem] md:text-[1.5rem] text-[#c2182b] bg-white w-[32px] h-[32px] md:w-[40px] md:h-[40px] p-[7px] md:p-[8px] rounded-full mx-auto mb-[8px] md:mb-[10px] group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
+                    <span className="block text-[0.65rem] md:text-[0.8rem] font-semibold">{badge.text}</span>
                   </div>
                 ))}
               </div>
@@ -68,13 +69,16 @@ export default function Home() {
 
       {/* --- PRODUCTS SECTION (Card Flip 3D) --- */}
       <ScrollReveal>
-        <section id="produk" className="py-[80px] px-[20px] max-w-[1200px] mx-auto" aria-label="Produk unggulan">
-          <h2 className="text-center text-[1.75rem] font-extrabold text-[#0a1428] mb-[50px] relative after:content-[''] after:block after:w-[60px] after:h-[3px] after:bg-[#c2182b] after:mx-auto after:mt-[10px] after:rounded-[2px] hover:after:w-[100px] after:transition-all after:duration-500">
+        <section id="produk" className="py-[60px] md:py-[80px] px-[15px] md:px-[20px] max-w-[1200px] mx-auto" aria-label="Produk unggulan">
+          <h2 className="text-center text-[1.4rem] md:text-[1.75rem] font-extrabold text-[#0a1428] mb-[35px] md:mb-[50px] relative after:content-[''] after:block after:w-[60px] after:h-[3px] after:bg-[#c2182b] after:mx-auto after:mt-[10px] after:rounded-[2px] hover:after:w-[100px] after:transition-all after:duration-500">
             PRODUK UNGGULAN KAMI
           </h2>
-          <div className="grid md:grid-cols-3 gap-[30px]">
+          {/* Grid: 1 kol (phone) / 2 kol (tablet, card ke-3 span penuh) / 3 kol (desktop) */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[20px] lg:gap-[30px]">
             {PRODUCTS.map((prod, idx) => (
-              <ProductCard key={idx} prod={prod} />
+              <div key={idx} className={idx === 2 ? 'sm:col-span-2 lg:col-span-1' : ''}>
+                <ProductCard prod={prod} />
+              </div>
             ))}
           </div>
         </section>
@@ -82,11 +86,11 @@ export default function Home() {
 
       {/* --- ABOUT SECTION --- */}
       <ScrollReveal>
-        <section id="tentang" className="bg-[#f8fafc] border-y border-[#e2e8f0] py-[80px]" aria-label="Tentang kami">
-          <div className="max-w-[1200px] mx-auto px-[20px] grid md:grid-cols-2 gap-[50px] items-center">
+        <section id="tentang" className="bg-[#f8fafc] border-y border-[#e2e8f0] py-[60px] md:py-[80px]" aria-label="Tentang kami">
+          <div className="max-w-[1200px] mx-auto px-[15px] md:px-[20px] grid md:grid-cols-2 gap-[35px] md:gap-[50px] items-center">
             <div>
               <h2 className="text-[0.9rem] text-[#c2182b] font-bold uppercase mb-[5px]">TENTANG KAMI</h2>
-              <h1 className="text-[2rem] font-extrabold text-[#0a1428] mb-[20px] leading-[1.2]">
+              <h1 className="text-[1.6rem] md:text-[2rem] font-extrabold text-[#0a1428] mb-[16px] md:mb-[20px] leading-[1.2]">
                 PT ARTHA <span className="text-[#c2182b]">MITRA PERWIRA</span>
               </h1>
               <p className="text-[#64748b] mb-[15px] text-[0.95rem]">
@@ -95,11 +99,12 @@ export default function Home() {
               <p className="text-[#64748b] mb-[15px] text-[0.95rem]">
                 Dengan komitmen terhadap kualitas, ketepatan waktu, dan kepuasan pelanggan, kami siap menjadi partner terpercaya dalam memenuhi kebutuhan kemasan industri Anda.
               </p>
-              <div className="grid grid-cols-4 gap-[15px] mt-[30px] text-center">
+              {/* Stats: 2x2 di phone, 4 kolom di >= md */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-[12px] md:gap-[15px] mt-[25px] md:mt-[30px] text-center">
                 {STATS.map((stat, idx) => (
-                  <div key={idx} className="bg-white p-[15px_5px] rounded-[8px] border border-[#e2e8f0] hover:-translate-y-2 hover:border-[#c2182b]/50 hover:shadow-lg transition-all duration-300 group" role="article" aria-label={stat.text}>
+                  <div key={idx} className="bg-white p-[12px_5px] md:p-[15px_5px] rounded-[8px] border border-[#e2e8f0] hover:-translate-y-2 hover:border-[#c2182b]/50 hover:shadow-lg transition-all duration-300 group" role="article" aria-label={stat.text}>
                     <stat.icon className="text-[1.25rem] text-[#c2182b] mb-[5px] mx-auto group-hover:animate-bounce" aria-hidden="true" />
-                    <span className="block text-[0.75rem] font-semibold text-[#1e293b]">{stat.text}</span>
+                    <span className="block text-[0.7rem] md:text-[0.75rem] font-semibold text-[#1e293b]">{stat.text}</span>
                   </div>
                 ))}
               </div>
@@ -118,21 +123,21 @@ export default function Home() {
 
       {/* --- KONTAK & PABRIK (UI KORPORAT / B2B PROFESIONAL) --- */}
       <ScrollReveal>
-        <section id="kontak" className="max-w-[1200px] mx-auto py-[80px] px-[20px]" aria-label="Kontak dan lokasi interaktif">
+        <section id="kontak" className="max-w-[1200px] mx-auto py-[60px] md:py-[80px] px-[15px] md:px-[20px]" aria-label="Kontak dan lokasi interaktif">
           {/* Header Section - gaya korporat: kiri judul, kanan deskripsi */}
-          <div className="mb-[35px] flex flex-col md:flex-row md:items-end md:justify-between gap-[15px]">
+          <div className="mb-[30px] md:mb-[35px] flex flex-col md:flex-row md:items-end md:justify-between gap-[15px]">
             <div>
               <h2 className="text-[0.8rem] text-[#c2182b] font-bold uppercase tracking-[2px] mb-[6px]">Hubungi Kami</h2>
-              <h1 className="text-[2rem] font-extrabold text-[#0a1428] m-0">KANTOR & PABRIK</h1>
+              <h1 className="text-[1.6rem] md:text-[2rem] font-extrabold text-[#0a1428] m-0">KANTOR & PABRIK</h1>
             </div>
             <p className="text-[0.9rem] text-[#64748b] max-w-[420px] m-0">
               Tim marketing kami siap melayani kebutuhan penawaran harga, spesifikasi produk, dan jadwal kunjungan pabrik Anda.
             </p>
           </div>
 
-          {/* CARD 1: INFORMASI KONTAK (Panel biru dongker, grid 4 kolom) */}
-          <div className="bg-gradient-to-br from-[#0a1428] to-[#172554] rounded-[10px] border border-[#1e293b] shadow-[0_20px_40px_-20px_rgba(10,20,40,0.5)] mb-[30px] overflow-hidden">
-            <div className="flex items-center justify-between px-[25px] md:px-[30px] py-[16px] border-b border-white/10">
+          {/* CARD 1: INFORMASI KONTAK (Panel biru dongker, grid responsive) */}
+          <div className="bg-gradient-to-br from-[#0a1428] to-[#172554] rounded-[10px] border border-[#1e293b] shadow-[0_20px_40px_-20px_rgba(10,20,40,0.5)] mb-[25px] md:mb-[30px] overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[6px] px-[20px] md:px-[30px] py-[16px] border-b border-white/10">
               <h3 className="text-[0.95rem] font-bold text-white uppercase tracking-[1.5px] flex items-center gap-[10px] m-0">
                 <span className="w-[4px] h-[18px] bg-[#c2182b] rounded-[1px]" aria-hidden="true"></span>
                 Informasi Kontak Perusahaan
@@ -140,9 +145,10 @@ export default function Home() {
               <span className="hidden md:block text-[0.7rem] text-[#94a3b8] uppercase tracking-[1.5px]">PT Artha Mitra Perwira</span>
             </div>
 
+            {/* 1 kol (phone) / 2 kol (tablet) / 4 kol (desktop) */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
               {CONTACT_ITEMS.map((contact, idx) => (
-                <div key={idx} className="bg-[#0c1830] p-[25px] hover:bg-[#10203f] transition-colors duration-300 group">
+                <div key={idx} className="bg-[#0c1830] p-[20px] md:p-[25px] hover:bg-[#10203f] transition-colors duration-300 group">
                   <div className="flex items-center gap-[10px] mb-[12px]">
                     <div className="w-[34px] h-[34px] rounded-[6px] bg-[#c2182b] text-white flex items-center justify-center text-[0.9rem] shrink-0 group-hover:bg-[#a01526] transition-colors duration-300">
                       <contact.icon aria-hidden="true" />
@@ -154,7 +160,7 @@ export default function Home() {
                       href={contact.href}
                       target={contact.external ? '_blank' : undefined}
                       rel={contact.external ? 'noopener noreferrer' : undefined}
-                      className="block text-[0.95rem] font-semibold text-white leading-[1.5] hover:text-[#eab308] transition-colors"
+                      className="block text-[0.95rem] font-semibold text-white leading-[1.5] hover:text-[#eab308] transition-colors break-words"
                     >
                       {contact.value}
                     </a>
@@ -166,7 +172,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-[15px] px-[25px] md:px-[30px] py-[14px] border-t border-white/10 bg-[#081020]">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-[15px] px-[20px] md:px-[30px] py-[14px] border-t border-white/10 bg-[#081020]">
               <span className="text-[0.7rem] font-bold text-[#94a3b8] uppercase tracking-[1.5px]">Sosial Media Perusahaan</span>
               <div className="flex gap-[10px]">
                 {SOCIAL_LINKS.map((soc, idx) => (
@@ -187,7 +193,7 @@ export default function Home() {
 
           {/* CARD 2: PETA INTERAKTIF (Panel putih gaya dashboard korporat) */}
           <div className="bg-white border border-[#e2e8f0] rounded-[10px] shadow-[0_10px_30px_-15px_rgba(10,20,40,0.15)] overflow-hidden">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[15px] px-[25px] py-[16px] border-b border-[#e2e8f0] bg-[#f8fafc]">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[15px] px-[15px] md:px-[25px] py-[16px] border-b border-[#e2e8f0] bg-[#f8fafc]">
               <h3 className="text-[0.95rem] font-bold text-[#0a1428] uppercase tracking-[1.5px] flex items-center gap-[10px] m-0">
                 <span className="w-[4px] h-[18px] bg-[#c2182b] rounded-[1px]" aria-hidden="true"></span>
                 Peta Lokasi Interaktif
@@ -204,9 +210,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Stack di < lg; sidebar 360px + map di >= lg */}
             <div className="grid lg:grid-cols-[360px_1fr]">
-              {/* List lokasi interaktif */}
-              <div className="border-b lg:border-b-0 lg:border-r border-[#e2e8f0] p-[20px] space-y-[12px] lg:max-h-[460px] overflow-y-auto custom-scrollbar">
+              <div className="border-b lg:border-b-0 lg:border-r border-[#e2e8f0] p-[15px] md:p-[20px] space-y-[12px] lg:max-h-[460px] overflow-y-auto custom-scrollbar">
                 {filteredLocations.length > 0 ? (
                   filteredLocations.map((loc) => (
                     <div 
@@ -237,8 +243,8 @@ export default function Home() {
                 )}
               </div>
 
-              {/* Iframe Google Maps */}
-              <div className="relative min-h-[420px] bg-[#f1f5f9]">
+              {/* Iframe Google Maps (tinggi responsive) */}
+              <div className="relative min-h-[320px] md:min-h-[420px] bg-[#f1f5f9]">
                 {activeLocation ? (
                   <iframe
                     key={activeLocation.id}
@@ -257,7 +263,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[15px] px-[25px] py-[14px] border-t border-[#e2e8f0] bg-[#f8fafc]">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[15px] px-[15px] md:px-[25px] py-[14px] border-t border-[#e2e8f0] bg-[#f8fafc]">
               <p className="text-[0.8rem] text-[#64748b] m-0">
                 Kunjungan pabrik dilayani pada jam kerja dengan konfirmasi terlebih dahulu kepada tim marketing.
               </p>
@@ -265,7 +271,7 @@ export default function Home() {
                 href={activeLocation.directionUrl} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="inline-flex items-center justify-center gap-[8px] bg-[#c2182b] hover:bg-[#a01526] text-white px-[22px] py-[10px] rounded-[6px] text-[0.85rem] font-bold uppercase tracking-[1px] transition-colors shadow-sm shrink-0"
+                className="inline-flex items-center justify-center gap-[8px] bg-[#c2182b] hover:bg-[#a01526] text-white px-[22px] py-[10px] rounded-[6px] text-[0.85rem] font-bold uppercase tracking-[1px] transition-colors shadow-sm shrink-0 w-full md:w-auto"
               >
                 <FaLocationDot aria-hidden="true" /> Buka Rute Google Maps
               </a>

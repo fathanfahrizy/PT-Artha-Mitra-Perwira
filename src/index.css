@@ -5,6 +5,27 @@
    Semua CSS custom project dikumpulkan di file ini (jangan inline di JSX)
    ========================================================================== */
 
+/* --- GUARD RESPONSIVE GLOBAL (biar fit di semua device) --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
+img, video, iframe {
+  max-width: 100%;
+}
+
+/* --- SAFE AREA untuk iPhone (notch & home indicator) --- */
+/* Aktif hanya kalau browser support env() */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: calc(30px + env(safe-area-inset-bottom));
+  }
+}
+
 /* --- Animasi fade-in untuk elemen hero --- */
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(20px); }

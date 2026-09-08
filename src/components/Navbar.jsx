@@ -1,3 +1,12 @@
+/**
+ * Navbar.jsx
+ * ----------
+ * Navbar fixed + mega menu "Produk" (tab Range Produk & Aplikasi Industri).
+ * Responsive: mega menu hanya muncul di >= md (tablet/desktop);
+ * di md pakai 2 kolom, di lg pakai 3 kolom penuh.
+ *
+ * Data: src/data/navigationData.js
+ */
 import { useState, useEffect, useRef } from 'react';
 import { FaBars, FaXmark, FaChevronDown } from 'react-icons/fa6';
 import { navLinks, MENU_CATEGORIES, MENU_APPLICATIONS, waLink } from '../data/navigationData';
@@ -29,23 +38,23 @@ export default function Navbar() {
 
   return (
     <nav ref={navRef} className="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300" role="navigation" aria-label="Main navigation">
-      <div className="max-w-[1200px] mx-auto px-[20px]">
-        <div className="flex justify-between items-center h-[80px]">
+      <div className="max-w-[1200px] mx-auto px-[15px] md:px-[20px]">
+        <div className="flex justify-between items-center h-[70px] md:h-[80px]">
           {/* LOGO SECTION */}
           <a href="#beranda" className="flex items-center gap-[10px] group" aria-label="PT Artha Mitra Perwira Home">
             <img 
               src="/logo-artha.png" 
               alt="Logo PT Artha Mitra Perwira" 
-              className="w-[40px] h-[40px] object-contain group-hover:scale-110 transition-transform duration-300"
+              className="w-[36px] h-[36px] md:w-[40px] md:h-[40px] object-contain group-hover:scale-110 transition-transform duration-300"
             />
             <div>
-              <h1 className="text-[1.3rem] font-bold text-[#0a1428] leading-[1.1]">PT ARTHA</h1>
-              <span className="text-[0.75rem] text-[#64748b] font-semibold">MITRA PERWIRA</span>
+              <h1 className="text-[1.1rem] md:text-[1.3rem] font-bold text-[#0a1428] leading-[1.1]">PT ARTHA</h1>
+              <span className="text-[0.65rem] md:text-[0.75rem] text-[#64748b] font-semibold">MITRA PERWIRA</span>
             </div>
           </a>
 
           {/* Desktop Navigation (Beranda dihapus, Produk jadi mega menu) */}
-          <ul className="hidden md:flex items-center gap-[30px]">
+          <ul className="hidden md:flex items-center gap-[20px] lg:gap-[30px]">
             <li>
               <button
                 onClick={() => setMenuOpen((o) => !o)}
@@ -77,7 +86,7 @@ export default function Navbar() {
               href="https://wa.me/6281315669699"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#c2182b] text-white px-[20px] py-[10px] rounded-[6px] font-semibold text-[0.9rem] hover:bg-[#a01526] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="bg-[#c2182b] text-white px-[16px] lg:px-[20px] py-[10px] rounded-[6px] font-semibold text-[0.85rem] lg:text-[0.9rem] hover:bg-[#a01526] transition-all duration-300 hover:scale-105 hover:shadow-lg"
               aria-label="Contact us via WhatsApp"
             >
               Hubungi Kami
@@ -134,10 +143,10 @@ export default function Navbar() {
         )}
       </div>
 
-      {/* --- MEGA MENU PRODUK (gaya Massey Ferguson, desktop only) --- */}
+      {/* --- MEGA MENU PRODUK (desktop/tablet only; md=2 kolom, lg=3 kolom) --- */}
       {menuOpen && (
-        <div className="hidden md:block absolute top-full left-0 w-full bg-white border-t border-[#e2e8f0] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] z-40">
-          <div className="max-w-[1200px] mx-auto px-[20px] py-[30px] relative">
+        <div className="hidden md:block absolute top-full left-0 w-full bg-white border-t border-[#e2e8f0] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] z-40 max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="max-w-[1200px] mx-auto px-[20px] py-[25px] md:py-[30px] relative">
             {/* Tombol Close (X) di kanan atas */}
             <button
               onClick={() => setMenuOpen(false)}
@@ -148,23 +157,23 @@ export default function Navbar() {
             </button>
 
             {/* Tabs Range / Application */}
-            <div className="flex gap-[10px] mb-[25px]">
+            <div className="flex flex-wrap gap-[10px] mb-[25px]">
               <button
                 onClick={() => setActiveTab('range')}
-                className={`px-[30px] py-[12px] text-[0.9rem] font-bold rounded-[4px] transition-colors ${activeTab === 'range' ? 'bg-[#c2182b] text-white' : 'bg-[#ececec] text-[#0a1428] hover:bg-[#e2e8f0]'}`}
+                className={`px-[20px] md:px-[30px] py-[10px] md:py-[12px] text-[0.85rem] md:text-[0.9rem] font-bold rounded-[4px] transition-colors ${activeTab === 'range' ? 'bg-[#c2182b] text-white' : 'bg-[#ececec] text-[#0a1428] hover:bg-[#e2e8f0]'}`}
               >
                 Range Produk
               </button>
               <button
                 onClick={() => setActiveTab('application')}
-                className={`px-[30px] py-[12px] text-[0.9rem] font-bold rounded-[4px] transition-colors ${activeTab === 'application' ? 'bg-[#c2182b] text-white' : 'bg-[#ececec] text-[#0a1428] hover:bg-[#e2e8f0]'}`}
+                className={`px-[20px] md:px-[30px] py-[10px] md:py-[12px] text-[0.85rem] md:text-[0.9rem] font-bold rounded-[4px] transition-colors ${activeTab === 'application' ? 'bg-[#c2182b] text-white' : 'bg-[#ececec] text-[#0a1428] hover:bg-[#e2e8f0]'}`}
               >
                 Aplikasi Industri
               </button>
             </div>
 
             {activeTab === 'range' ? (
-              <div className="grid grid-cols-[240px_280px_1fr] gap-[20px]">
+              <div className="grid md:grid-cols-2 lg:grid-cols-[240px_280px_1fr] gap-[20px]">
                 {/* KOLOM 1: Kategori Produk */}
                 <div className="space-y-[10px]">
                   {MENU_CATEGORIES.map((cat) => (
@@ -192,8 +201,8 @@ export default function Navbar() {
                   ))}
                 </div>
 
-                {/* KOLOM 3: Preview Model Aktif */}
-                <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[4px] p-[25px] flex flex-col">
+                {/* KOLOM 3: Preview Model Aktif (di md jadi baris penuh bawah) */}
+                <div className="md:col-span-2 lg:col-span-1 bg-[#f8fafc] border border-[#e2e8f0] rounded-[4px] p-[25px] flex flex-col">
                   <div className="flex items-center justify-center h-[160px] mb-[15px] overflow-hidden">
                     <img src={activeCategory.image} alt={activeModel.name} className="max-h-full w-auto object-contain" onError={handleImgError} />
                   </div>
@@ -218,7 +227,7 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-[300px_1fr] gap-[20px]">
+              <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-[20px]">
                 {/* KOLOM 1: Daftar Aplikasi Industri */}
                 <div className="space-y-[10px]">
                   {MENU_APPLICATIONS.map((app) => (
@@ -233,14 +242,14 @@ export default function Navbar() {
                 </div>
 
                 {/* KOLOM 2: Preview Aplikasi Aktif */}
-                <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[4px] p-[30px] flex flex-col">
+                <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[4px] p-[25px] lg:p-[30px] flex flex-col">
                   <h4 className="text-[1.3rem] font-extrabold text-[#0a1428] mb-[10px]">{activeApp.name}</h4>
                   <p className="text-[0.9rem] text-[#64748b] leading-[1.7] mb-[20px]">{activeApp.desc}</p>
                   <a
                     href={waLink(`solusi kemasan untuk kebutuhan ${activeApp.name}`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto inline-block bg-[#c2182b] hover:bg-[#a01526] text-white text-center px-[20px] py-[10px] rounded-[4px] text-[0.85rem] font-bold uppercase tracking-[0.5px] transition-colors w-max"
+                    className="mt-auto inline-block bg-[#c2182b] hover:bg-[#a01526] text-white text-center px-[20px] py-[10px] rounded-[4px] text-[0.85rem] font-bold uppercase tracking-[0.5px] transition-colors w-full lg:w-max"
                   >
                     Hubungi Marketing
                   </a>
