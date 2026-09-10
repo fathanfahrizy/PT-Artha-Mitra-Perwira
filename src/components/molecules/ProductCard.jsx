@@ -38,14 +38,14 @@ export default function ProductCard({ prod }) {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem] uppercase tracking-[0.5px]"
+                className="flex-1 px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem] uppercase tracking-[0.5px]"
               >
                 Discover
               </Button>
               <Button
                 variant="outline"
                 onClick={() => setIsFlipped(true)}
-                className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem] uppercase tracking-[0.5px]"
+                className="flex-1 px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem] uppercase tracking-[0.5px]"
                 aria-label={`Quick view ${prod.title}`}
               >
                 Quick View
@@ -72,7 +72,7 @@ export default function ProductCard({ prod }) {
             <Button
               variant="outline"
               onClick={() => setIsFlipped(false)}
-              className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem]"
+              className="flex-1 px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem]"
               aria-label={`Tutup quick view ${prod.title}`}
             >
               Close
@@ -81,7 +81,7 @@ export default function ProductCard({ prod }) {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 px-2 sm:px-[15px] py-2.5 rounded-[4px] text-[0.72rem] sm:text-[0.85rem]"
+              className="flex-1 px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem]"
             >
               Discover
             </Button>
