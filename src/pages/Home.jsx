@@ -1,7 +1,7 @@
-import HeroSection from '../components/organisms/HeroSection';
-import ProductsSection from '../components/organisms/ProductsSection';
-import AboutSection from '../components/organisms/AboutSection';
-import ContactSection from '../components/organisms/ContactSection';
+import HeroSection from '@/components/organisms/HeroSection';
+import ProductsSection from '@/components/organisms/ProductsSection';
+import AboutSection from '@/components/organisms/AboutSection';
+import ContactSection from '@/components/organisms/ContactSection';
 
 export default function Home() {
   return (
