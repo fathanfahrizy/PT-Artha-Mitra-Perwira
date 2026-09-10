@@ -64,8 +64,7 @@ export default function Footer() {
               </div>
             </a>
             <p className="text-[0.9rem] leading-[1.7] mb-5">
-              Perusahaan produksi kemasan karton bergelombang (corrugated box) terpercaya.
-              Solusi kemasan aman, kuat, dan ramah lingkungan untuk mendukung pertumbuhan bisnis Anda.
+              Solusi terpercaya untuk kebutuhan kemasan karton bergelombang, layanan percetakan umum, dan consumable production untuk mendukung pertumbuhan bisnis Anda.
             </p>
             {/* Social Media Icons */}
             <div className="flex gap-2.5">

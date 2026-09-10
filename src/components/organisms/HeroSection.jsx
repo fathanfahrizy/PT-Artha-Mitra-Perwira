@@ -15,7 +15,7 @@ export default function HeroSection() {
               SOLUSI KEMASAN <span className="text-[#eab308] inline-block hover:scale-110 transition-transform duration-300 cursor-default">KARTON</span> BERKUALITAS UNTUK BISNIS ANDA
             </h1>
             <p className="text-[#cbd5e1] text-[0.95rem] md:text-[1.05rem] mb-6.25 md:mb-7.5">
-              Kami menyediakan produk karton berkualitas tinggi dengan harga kompetitif dan layanan terbaik untuk mendukung kebutuhan industri Anda.
+              Kami menyediakan produk karton berkualitas tinggi, layanan percetakan umum, serta kebutuhan consumable production dengan harga kompetitif untuk mendukung industri Anda.
             </p>
             <div className="grid grid-cols-3 gap-2.5 md:gap-3.75">
               {HERO_BADGES.map((badge, idx) => (

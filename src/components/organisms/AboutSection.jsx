@@ -14,11 +14,22 @@ export default function AboutSection() {
               PT ARTHA <span className="text-[#c2182b]">MITRA PERWIRA</span>
             </h1>
             <p className="text-[#64748b] mb-3.75 text-[0.95rem]">
-              PT Artha Mitra Perwira adalah perusahaan yang bergerak di bidang produksi kemasan karton bergelombang (corrugated box) dan berbagai produk pendukung lainnya.
+              PT Artha Mitra Perwira adalah partner terpercaya yang bergerak dalam tiga pilar aktivitas bisnis utama untuk mendukung kebutuhan industri Anda:
             </p>
-            <p className="text-[#64748b] mb-3.75 text-[0.95rem]">
-              Dengan komitmen terhadap kualitas, ketepatan waktu, dan kepuasan pelanggan, kami siap menjadi partner terpercaya dalam memenuhi kebutuhan kemasan industri Anda.
-            </p>
+            <ul className="text-[#64748b] text-[0.95rem] mb-3.75 space-y-2 list-none">
+              <li className="flex gap-2">
+                <span className="text-[#c2182b] font-bold">1.</span> 
+                <span><strong>Penyediaan Karton Box</strong>, Layer, Partisi, Pallet Karton, Paper Angle, Paper Core sesuai ukuran dan desain customer.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-[#c2182b] font-bold">2.</span> 
+                <span><strong>Percetakan Umum:</strong> Surat Jalan, Inner Box, Box Makanan, Kartu Nama, Kop Surat, Company Profile, Undangan, dll.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-[#c2182b] font-bold">3.</span> 
+                <span><strong>Penyediaan Barang General / Consumable Production:</strong> PE Foam, Roda Lory, Plastik Bubble, Bucket Impraboard.</span>
+              </li>
+            </ul>
             {/* Stats: 2x2 di phone, 4 kolom di >= md */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-3.75 mt-6.25 md:mt-7.5 text-center">
               {STATS.map((stat, idx) => (
