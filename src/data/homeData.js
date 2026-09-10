@@ -14,7 +14,7 @@ export const HERO_BADGES = [
 export const PRODUCTS = [
   {
     title: "KARTON BOX",
-    image: "/foto-karton.jpg",
+    image: "/images/foto-karton.png",
     tagline: 'Kuat, presisi, dan siap custom untuk semua kebutuhan pengemasan industri Anda.',
     specs: [
       { icon: FaLayerGroup, label: 'Material', value: 'Kraft K150 - K350' },
@@ -24,7 +24,7 @@ export const PRODUCTS = [
   },
   {
     title: "PALLET KARTON",
-    image: "/foto-pallet.jpg",
+    image: "/images/foto-pallet.png",
     tagline: 'Ringan, tahan beban berat, dan aman untuk kebutuhan ekspor.',
     specs: [
       { icon: FaWeightHanging, label: 'Kapasitas Beban', value: 's/d 1.500 kg' },
@@ -34,7 +34,7 @@ export const PRODUCTS = [
   },
   {
     title: "SIKU KARTON",
-    image: "/foto-siku.jpg",
+    image: "/images/foto-siku.png",
     tagline: 'Pelindung sudut produk agar tetap aman selama pengiriman dan stacking.',
     specs: [
       { icon: FaRulerCombined, label: 'Ketebalan', value: '3 - 5 mm' },
