@@ -65,3 +65,12 @@ img, video, iframe {
 .flip-back {
   transform: rotateY(180deg);
 }
+
+/* --- MOBILE & SAFARI POLISH ---
+   Hilangkan tap-highlight abu/biru khas iOS Safari saat tombol/link ditekan,
+   dan matikan delay double-tap zoom biar tombol terasa responsif di HP. */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
