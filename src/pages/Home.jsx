@@ -2,7 +2,7 @@ import HeroSection from '@/components/organisms/HeroSection';
 import ProductsSection from '@/components/organisms/ProductsSection';
 import AboutSection from '@/components/organisms/AboutSection';
 import ContactSection from '@/components/organisms/ContactSection';
-import { HERO_BADGES } from '@/data/homeData';
+import { HERO_BADGES, PRODUCTS } from '@/data/homeData';
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         badges={HERO_BADGES}
         imageSrc="/images/foto-hero.jpeg"
       />
-      <ProductsSection />
+      <ProductsSection products={PRODUCTS} />
       <AboutSection />
       <ContactSection />
     </div>
