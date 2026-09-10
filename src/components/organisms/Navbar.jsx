@@ -42,7 +42,7 @@ export default function Navbar() {
       <div className="max-w-300 mx-auto px-3.75 md:px-5">
         <div className="flex justify-between items-center h-17.5 md:h-20">
           {/* LOGO SECTION */}
-          <a href="#beranda" className="flex items-center gap-2.5 group" aria-label="PT Artha Mitra Perwira Home">
+          <a href="/" className="flex items-center gap-2.5 group" aria-label="PT Artha Mitra Perwira Home">
             <img 
               src="/images/logo-artha.png" 
               alt="Logo PT Artha Mitra Perwira" 
