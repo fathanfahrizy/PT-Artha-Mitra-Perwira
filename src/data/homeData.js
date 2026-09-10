@@ -1,6 +1,5 @@
 import {
-  FaShieldHalved, FaLeaf, FaAward, FaBox, FaPallet, FaShapes,
-  FaMedal, FaIndustry, FaUsers, FaBolt,
+  FaShieldHalved, FaLeaf, FaAward, FaMedal, FaIndustry, FaUsers, FaBolt,
   FaLayerGroup, FaRulerCombined, FaBoxOpen, FaWeightHanging, FaGlobe, FaArrowsLeftRight
 } from 'react-icons/fa6';
 

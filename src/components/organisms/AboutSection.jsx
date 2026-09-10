@@ -28,7 +28,7 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-            <Button href="#" className="mt-3.75 w-full px-4 lg:px-5 py-2.5 text-[0.85rem] lg:text-[0.9rem] hover:scale-105" aria-label="Contact us via WhatsApp">
+            <Button href="/compro-amp.pdf" className="mt-3.75 w-full px-4 lg:px-5 py-2.5 text-[0.85rem] lg:text-[0.9rem] hover:scale-105" aria-label="More detail company profile document" target='_blank' rel="noopener noreferrer">
               Lihat Lebih Detail
             </Button>
           </div>
