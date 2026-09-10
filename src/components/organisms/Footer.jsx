@@ -54,7 +54,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="#beranda" className="flex items-center gap-3 group mb-5" aria-label="PT Artha Mitra Perwira Home">
               <img
-                src="/logo-artha.png"
+                src="/images/logo-artha.png"
                 alt="Logo PT Artha Mitra Perwira"
                 className="w-11.25 h-11.25 object-contain group-hover:scale-110 transition-transform duration-300"
               />

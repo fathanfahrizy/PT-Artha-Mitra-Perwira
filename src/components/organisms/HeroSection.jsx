@@ -28,7 +28,7 @@ export default function HeroSection() {
           </div>
           <div className="relative w-full aspect-4/3 lg:aspect-auto lg:h-125 overflow-hidden rounded-xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] border-[3px] border-white/10 group">
             <PixelImage
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+              src="/images/foto-hero.jpeg"
               customGrid={{ rows: 4, cols: 6 }}
               grayscaleAnimation
               className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-in-out"
