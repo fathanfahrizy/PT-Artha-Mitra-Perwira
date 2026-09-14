@@ -1,11 +1,19 @@
-import { FEATURES_CAROUSEL, PRODUCTS } from '../../data/homeData';
-import FeatureCarousel from '../molecules/FeatureCarousel';
+/**
+ * ProductsSection.jsx (REUSABLE)
+ * ------------------------------
+ * Saklar tampilan lewat PROP `products` (pola reusable Raka):
+ * - DIKIRIM products (array isi) → grid flip card ProductCard
+ * - TIDAK dikirim               → FeatureCarousel showcase
+ * Props:
+ * - title    : judul section (opsional, default otomatis per mode)
+ * - products : data grid (default null = mode carousel)
+ */
+import { FEATURES_CAROUSEL } from '../../data/homeData';
 import ProductCard from '../molecules/ProductCard';
+import FeatureCarousel from '../molecules/FeatureCarousel';
 import ScrollReveal from '../atoms/ScrollReveal';
 
 export default function ProductsSection({ title, products = null }) {
-  // Logika: kalau products dikirim (array) → grid flip card (halaman /product Raka).
-  // Kalau tidak → FeatureCarousel showcase (Home versi fathan).
   const useGrid = Array.isArray(products) && products.length > 0;
   const heading = title ?? (useGrid ? 'PRODUK UNGGULAN KAMI' : 'SOLUSI LENGKAP KAMI');
 

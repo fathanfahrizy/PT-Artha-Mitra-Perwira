@@ -2,8 +2,13 @@
  * Navbar.jsx
  * ----------
  * Navbar fixed + mega menu "Produk" (tab Range Produk & Aplikasi Industri).
- * Responsive: mega menu hanya muncul di >= md (tablet/desktop);
- * di md pakai 2 kolom, di lg pakai 3 kolom penuh.
+ * Responsive:
+ * - Tablet/Desktop (>= md): mega menu dropdown penuh (2 kolom di md, 3 kolom di lg).
+ * - Mobile (< md): hamburger menu dengan ACCORDION:
+ *   • "Produk" → kategori (Karton Box / Pallet Karton / Siku Karton) → model/varian
+ *     (tap model = tutup menu + smooth scroll ke #produk)
+ *   • "Aplikasi Industri" → card deskripsi + CTA WA per aplikasi
+ *   Menu diberi max-height + scroll biar gak jebol layar kecil.
  *
  * Data: src/data/navigationData.js
  */
@@ -19,9 +24,13 @@ export default function Navbar() {
   const [activeCategory, setActiveCategory] = useState(MENU_CATEGORIES[0]);
   const [activeModel, setActiveModel] = useState(MENU_CATEGORIES[0].models[0]);
   const [activeApp, setActiveApp] = useState(MENU_APPLICATIONS[0]);
+  // State accordion khusus mobile
+  const [mobileProdukOpen, setMobileProdukOpen] = useState(false);
+  const [mobileOpenCat, setMobileOpenCat] = useState(null);
+  const [mobileAppOpen, setMobileAppOpen] = useState(false);
   const navRef = useRef(null);
 
-  // Tutup mega menu kalau klik di luar area navbar
+  // Tutup mega menu kalau klik di luar area navbar (desktop)
   useEffect(() => {
     const handleOutside = (e) => {
       if (menuOpen && navRef.current && !navRef.current.contains(e.target)) {
@@ -31,6 +40,23 @@ export default function Navbar() {
     document.addEventListener('mousedown', handleOutside);
     return () => document.removeEventListener('mousedown', handleOutside);
   }, [menuOpen]);
+
+  // Reset semua accordion mobile setiap kali hamburger ditutup
+  useEffect(() => {
+    if (!isOpen) {
+      setMobileProdukOpen(false);
+      setMobileOpenCat(null);
+      setMobileAppOpen(false);
+    }
+  }, [isOpen]);
+
+  // Tutup semua menu mobile (dipakai saat link di-klik)
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+    setMobileProdukOpen(false);
+    setMobileOpenCat(null);
+    setMobileAppOpen(false);
+  };
 
   // Fallback gambar produk kalau file belum ada
   const handleImgError = (e) => {
@@ -105,31 +131,114 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation (Beranda dihapus) */}
+        {/* Mobile Navigation — PRODUK & APLIKASI sekarang ACCORDION, bukan anchor polos */}
         {isOpen && (
-          <ul className="md:hidden pb-5 space-y-2.5" role="menu">
+          <ul className="md:hidden pb-5 space-y-2.5 max-h-[calc(100vh-70px)] overflow-y-auto" role="menu">
+            {/* ACCORDION 1: PRODUK (kategori → model/varian) */}
             <li role="none">
-              <a
-                href="#produk"
-                className="block text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-                role="menuitem"
+              <button
+                onClick={() => setMobileProdukOpen((o) => !o)}
+                className="w-full flex items-center justify-between text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
+                aria-expanded={mobileProdukOpen}
+                aria-label="Buka daftar produk"
               >
                 Produk
-              </a>
+                <FaChevronDown className={`text-[0.7rem] transition-transform duration-300 ${mobileProdukOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              </button>
+
+              {mobileProdukOpen && (
+                <div className="mt-2 ml-3 border-l-2 border-[#c2182b]/30 pl-3 space-y-1.5">
+                  {MENU_CATEGORIES.map((cat) => (
+                    <div key={cat.id}>
+                      {/* Level 1: kategori produk */}
+                      <button
+                        onClick={() => setMobileOpenCat(mobileOpenCat === cat.id ? null : cat.id)}
+                        className={`w-full flex items-center justify-between px-3 py-2.25 rounded-md text-[0.9rem] font-semibold transition-colors duration-300 ${mobileOpenCat === cat.id ? 'bg-[#c2182b] text-white' : 'text-[#1e293b] hover:bg-[#f8fafc]'}`}
+                        aria-expanded={mobileOpenCat === cat.id}
+                      >
+                        {cat.name}
+                        <FaChevronDown className={`text-[0.6rem] transition-transform duration-300 ${mobileOpenCat === cat.id ? 'rotate-180' : ''}`} aria-hidden="true" />
+                      </button>
+
+                      {/* Level 2: model/varian → scroll ke #produk */}
+                      {mobileOpenCat === cat.id && (
+                        <ul className="mt-1.5 mb-1 ml-2 space-y-1">
+                          {cat.models.map((model) => (
+                            <li key={model.id}>
+                              <a
+                                href="#produk"
+                                onClick={closeMobileMenu}
+                                className="block px-3 py-2 rounded-md text-[0.85rem] text-[#64748b] hover:text-[#c2182b] hover:bg-[#f8fafc] transition-colors duration-300"
+                              >
+                                {model.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+
+                  {/* CTA tanya produk via WA */}
+                  <Button
+                    href={waLink('produk kemasan karton')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full mt-1 px-3.75 py-2.25 rounded-md text-[0.85rem]"
+                  >
+                    Tanya Produk via WhatsApp
+                  </Button>
+                </div>
+              )}
             </li>
+
+            {/* ACCORDION 2: APLIKASI INDUSTRI (card desc + CTA WA) */}
+            <li role="none">
+              <button
+                onClick={() => setMobileAppOpen((o) => !o)}
+                className="w-full flex items-center justify-between text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
+                aria-expanded={mobileAppOpen}
+                aria-label="Buka daftar aplikasi industri"
+              >
+                Aplikasi Industri
+                <FaChevronDown className={`text-[0.7rem] transition-transform duration-300 ${mobileAppOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              </button>
+
+              {mobileAppOpen && (
+                <div className="mt-2 ml-3 border-l-2 border-[#c2182b]/30 pl-3 space-y-2">
+                  {MENU_APPLICATIONS.map((app) => (
+                    <div key={app.id} className="bg-[#f8fafc] border border-[#e2e8f0] rounded-md p-3">
+                      <p className="text-[0.85rem] font-bold text-[#0a1428] m-0 mb-1">{app.name}</p>
+                      <p className="text-[0.78rem] text-[#64748b] m-0 mb-2 leading-[1.5]">{app.desc}</p>
+                      <Button
+                        href={waLink(`solusi kemasan untuk kebutuhan ${app.name}`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full px-3 py-2 rounded-sm text-[0.75rem]"
+                      >
+                        Hubungi Marketing
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </li>
+
+            {/* Link navigasi biasa */}
             {navLinks.map((link) => (
               <li key={link.name} role="none">
                 <a
                   href={link.href}
                   className="block text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMobileMenu}
                   role="menuitem"
                 >
                   {link.name}
                 </a>
               </li>
             ))}
+
+            {/* CTA utama */}
             <li className="pt-2.5 px-3.75">
               <Button
                 href="https://wa.me/6281315669699"

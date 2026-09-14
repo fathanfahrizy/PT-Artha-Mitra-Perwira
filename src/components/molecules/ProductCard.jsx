@@ -7,9 +7,6 @@
  * - Background gradient halus + glow merah + drop-shadow → produk "mengambang"
  * - Aksen garis merah di sudut + hover zoom halus biar lebih hidup
  *
- * Sisi DEPAN : foto produk + judul + tagline + tombol Discover & Quick View
- * Sisi BELAKANG : header nama + grid spesifikasi + tombol Close & Discover
- *
  * Props:
  * - prod         : objek produk { title, image, tagline, specs[] }
  * - heightClass  : (opsional) override tinggi root. Default "h-125 sm:h-130".
