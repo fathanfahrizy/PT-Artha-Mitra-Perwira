@@ -1,120 +1,101 @@
-# 🏭 PT ARTHA MITRA PERWIRA — Company Profile Website
+# PT Artha Mitra Perwira - Company Profile Website
 
-Website landing page B2B untuk perusahaan produksi kemasan karton bergelombang
-(corrugated box): Karton Box, Pallet Karton, dan Siku Karton.
+A B2B company profile website for PT Artha Mitra Perwira, a corrugated box manufacturing company. The business focuses on corrugated packaging (Carton Boxes, Pallet Karton, Siku Karton), general printing, and consumable production.
 
-## 🚀 Tech Stack
+## Technology Stack
 
-| Teknologi      | Keterangan                                        |
-|----------------|---------------------------------------------------|
-| Vite           | Build tool & dev server                           |
-| React 18 (JSX) | UI library (plain JavaScript, tanpa TypeScript)   |
-| Tailwind CSS v4| Styling utility-first (`@import "tailwindcss"`)   |
-| react-icons    | Ikon (paket `fa6` / Font Awesome 6)               |
-| Magic UI pattern | Efek `PixelImage` (implementasi custom lokal)   |
+| Technology | Description |
+|---|---|
+| Vite | Frontend build tool and development server |
+| React 18 | UI library (JSX, plain JavaScript) |
+| React Router | Client-side routing for multi-page architecture |
+| Tailwind CSS v4 | Utility-first styling framework |
+| react-icons | Iconography (Font Awesome 6) |
+| Framer Motion | Fluid animations for complex interactive components |
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
-npm install       # install dependencies
-npm run dev       # jalankan dev server (default: http://localhost:5173)
-npm run build     # build produksi ke folder dist/
-npm run preview   # preview hasil build
+npm install       # Install dependencies
+npm run dev       # Start development server
+npm run build     # Build production bundle
+npm run preview   # Preview the production build locally
 ```
 
-## 📁 Struktur Project
+## Project Structure
 
-```
+This project follows the Atomic Design methodology to ensure high component reusability and scalability.
+
+```text
 PT-Artha/
-├── public/                         # Aset statis (diserve langsung dari root "/")
-│   ├── logo-artha.png              # Logo perusahaan (dipakai Navbar)
-│   ├── foto-karton.jpg             # Foto produk (card & mega menu)
-│   ├── foto-pallet.jpg
-│   └── foto-siku.jpg
+├── public/                 # Static assets served directly from the root
+│   └── images/             # Product photos, hero backgrounds, and logos
 │
 ├── src/
-│   ├── assets/                     # Aset internal yang di-import via Vite
+│   ├── components/         # UI Components organized by Atomic Design principles
+│   │   ├── atoms/          # Basic building blocks (Button, PixelImage, ScrollReveal)
+│   │   ├── molecules/      # Simple combinations (ProductCard, FeatureCarousel)
+│   │   ├── organisms/      # Complex sections (Navbar, Footer, HeroSection, ProductsSection)
+│   │   └── templates/      # Layout wrappers (MainLayout)
 │   │
-│   ├── components/                 # Komponen UI reusable lintas halaman
-│   │   ├── ui/                     # Primitif visual / efek (pola Magic UI)
-│   │   │   └── pixel-image.jsx     # Efek pixel reveal pada gambar
-│   │   ├── Navbar.jsx              # Navbar + mega menu "Produk" (2 tab)
-│   │   ├── Footer.jsx              # Footer situs (features strip + copyright)
-│   │   ├── ScrollReveal.jsx        # Wrapper animasi fade-in saat scroll
-│   │   └── ProductCard.jsx         # Card produk flip 3D (Quick View)
+│   ├── data/               # Single Source of Truth for website content
+│   │   ├── navigationData.js # Navigation links and mega menu categories
+│   │   ├── homeData.js       # Homepage content (Hero, About, Stats)
+│   │   ├── productsData.js   # Product catalogs and specifications
+│   │   ├── contactData.js    # Contact information and map embeds
+│   │   └── footerData.js     # Footer feature strips
 │   │
-│   ├── data/                       # SINGLE SOURCE OF TRUTH konten situs
-│   │   ├── navigationData.js       # Link nav, kategori mega menu, helper waLink()
-│   │   ├── homeData.js             # Hero badges, PRODUCTS (+specs), stats
-│   │   ├── contactData.js          # Kontak, sosmed, LOCATIONS_DATA (+map embed)
-│   │   └── footerData.js           # Features strip footer
+│   ├── pages/              # Page-level components
+│   │   ├── Home.jsx        # Landing page
+│   │   └── Product.jsx     # Product showcase page
 │   │
-│   ├── pages/                      # Komponen halaman (1 file = 1 halaman)
-│   │   └── Home.jsx                # Landing page: Hero, Produk, Tentang, Kontak
-│   │
-│   ├── App.jsx                     # Root: komposisi Navbar + <main> + Footer
-│   ├── main.jsx                    # Entry point render ReactDOM
-│   └── index.css                   # Style global: animasi, scrollbar, flip card
-│
-├── index.html                      # Template HTML + meta SEO
-├── vite.config.js                  # Konfigurasi Vite (+ alias bila diaktifkan)
-├── package.json                    # Dependencies & scripts
-└── README.md                       # Dokumentasi ini
+│   ├── App.jsx             # Root application component and routing configuration
+│   ├── main.jsx            # Application entry point
+│   └── index.css           # Global styles and Tailwind base imports
 ```
 
-## 🧭 Konvensi Code (WAJIB dibaca contributor)
+## Coding Conventions
 
-1. **Data & konten TIDAK boleh hardcode di komponen.**
-   Semua teks, produk, kontak, sosmed, dan URL lives di `src/data/*.js`.
-   Komponen hanya render + logic UI.
-2. **Penempatan komponen:**
-   - `components/` → komponen reusable lintas halaman (Navbar, Footer, dll.)
-   - `components/ui/` → primitif visual/efek murni (pixel-image, dll.)
-   - `pages/` → komponen halaman; 1 file = 1 route/halaman
-3. **Naming:**
-   - Komponen: `PascalCase.jsx`
-   - File data: `camelCase + Data.js` (contoh: `homeData.js`)
-   - Export data: `SCREAMING_SNAKE_CASE` (contoh: `CONTACT_ITEMS`)
-4. **Setiap file komponen/data punya header comment JSDoc** yang menjelaskan
-   fungsi file, dipakai di mana, dan sumber datanya. Ikuti pola yang sudah ada
-   di `ScrollReveal.jsx`, `ProductCard.jsx`, dan `Home.jsx`.
-5. **CSS custom global** hanya boleh di `src/index.css` (jangan `<style>` inline di JSX).
-6. **Animasi scroll reveal** pakai wrapper `<ScrollReveal>` (sekali tampil, tidak repeat).
+1. Data Separation
+   All textual content, product details, contact information, and URLs must be managed within the `src/data/*.js` files. Components should remain purely presentational and logic-driven, with no hardcoded business text.
 
-## 🎨 Brand Guidelines (warna tema)
+2. Component Organization
+   All components must adhere to the Atomic Design pattern (`atoms`, `molecules`, `organisms`, `templates`). Reusable sections should be designed to accept props (e.g., `title`, `description`, `items`) to maximize flexibility across different pages.
 
-| Warna            | Hex       | Pemakaian                          |
-|------------------|-----------|------------------------------------|
-| Biru dongker     | `#0a1428` | Background hero/panel, teks utama  |
-| Biru dongker 2   | `#172554` | Gradient partner hero              |
-| Merah brand      | `#c2182b` | Aksen, tombol primer, ikon         |
-| Merah gelap      | `#a01526` | Hover tombol primer                |
-| Kuning aksen     | `#eab308` | Highlight teks di background gelap |
-| Abu teks         | `#64748b` | Teks sekunder di background terang |
+3. File Naming
+   - React Components: `PascalCase.jsx`
+   - Data Files: `camelCase.js` (e.g., `homeData.js`)
+   - Exported Constants: `SCREAMING_SNAKE_CASE`
 
-## 🔗 URL Eksternal Penting
+4. Styling
+   Use Tailwind CSS utility classes within the JSX. Avoid inline `<style>` tags or custom CSS in `src/index.css` unless strictly necessary for complex global animations or specific external library overrides.
 
-| Keperluan        | URL                                                    |
-|------------------|--------------------------------------------------------|
-| Pin Google Maps  | https://maps.app.goo.gl/LV73HXgJHfVhTJpi9              |
-| WhatsApp marketing | https://wa.me/6281315669699                          |
-| Email            | mailto:marketing.arthamitra@gmail.com                  |
+## Brand Guidelines
 
-> Catatan: link share `maps.app.goo.gl` TIDAK bisa dipakai di `<iframe>`.
-> Untuk embed peta gunakan format `?q=...&output=embed` yang ada di
-> `src/data/contactData.js` (field `mapUrl`).
+| Color | Hex | Usage |
+|---|---|---|
+| Dark Blue | `#0a1428` | Primary background, main text |
+| Navy Blue | `#172554` | Hero gradients |
+| Brand Red | `#c2182b` | Accents, primary buttons, icons |
+| Dark Red | `#a01526` | Primary button hover state |
+| Accent Yellow | `#eab308` | Text highlights on dark backgrounds |
+| Slate Gray | `#64748b` | Secondary text |
 
-## ➕ Cara Update Konten
+## Content Management Reference
 
-| Ingin mengubah...                    | Edit file                        |
-|--------------------------------------|----------------------------------|
-| Produk & spesifikasi (card flip)     | `src/data/homeData.js`           |
-| Menu mega "Produk" & tab aplikasi    | `src/data/navigationData.js`     |
-| Kontak, sosmed, lokasi & peta        | `src/data/contactData.js`        |
-| Features strip footer                | `src/data/footerData.js`         |
-| Foto produk                          | ganti file di `public/` (nama tetap) |
+| To modify... | Edit file |
+|---|---|
+| Products and specifications | `src/data/productsData.js` |
+| Homepage Hero, About, stats | `src/data/homeData.js` |
+| Navigation menus and application tabs | `src/data/navigationData.js` |
+| Contact, social media, maps | `src/data/contactData.js` |
+| Footer links and strip | `src/data/footerData.js` |
+| Images and assets | `public/images/` |
 
-## 📦 Aset yang WAJIB ada di `public/`
+## Important External URLs
 
-`logo-artha.png`, `foto-karton.jpg`, `foto-pallet.jpg`, `foto-siku.jpg`
-(bila hilang, UI memakai fallback placeholder otomatis).
+- Google Maps Pin: https://maps.app.goo.gl/LV73HXgJHfVhTJpi9
+- WhatsApp Marketing: https://wa.me/6281315669699
+- Email: mailto:marketing.arthamitra@gmail.com
+
+*Note: The shortened Google Maps URL cannot be embedded in an iframe. For embedding, utilize the `mapUrl` format located within `src/data/contactData.js`.*
