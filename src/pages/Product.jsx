@@ -1,6 +1,6 @@
 import HeroSection from "@/components/organisms/HeroSection"
 import ProductsSection from "@/components/organisms/ProductsSection"
-import { PRODUCTS } from "@/data/homeData"
+import { PRODUCTS } from "@/data/productsData"
 
 export default function Product() {
     return (
