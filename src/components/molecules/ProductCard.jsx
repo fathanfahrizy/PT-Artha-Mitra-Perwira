@@ -36,7 +36,7 @@ export default function ProductCard({ prod, heightClass = "h-125 sm:h-130", onFl
         <div className="flip-face bg-white border border-[#e2e8f0] rounded-[10px] overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.12)] hover:border-[#c2182b]/30 transition-all duration-300 group/card">
           
           {/* AREA FOTO: fleksibel (flex-1), object-contain biar produk selalu utuh & proporsional */}
-          <div className="relative flex-1 min-h-44 bg-gradient-to-br from-[#f8fafc] via-white to-[#edf1f6] flex items-center justify-center p-5 sm:p-6 overflow-hidden">
+          <div className="relative flex-1 min-h-44 bg-linear-to-br from-[#f8fafc] via-white to-[#edf1f6] flex items-center justify-center p-5 sm:p-6 overflow-hidden">
             {/* Glow dekoratif di belakang produk */}
             <div className="absolute w-3/5 h-3/5 rounded-full bg-[#c2182b]/6 blur-2xl pointer-events-none" aria-hidden="true"></div>
             {/* Aksen garis merah kecil di sudut kiri atas */}

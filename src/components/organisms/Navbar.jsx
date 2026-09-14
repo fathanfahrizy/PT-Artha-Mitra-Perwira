@@ -44,9 +44,11 @@ export default function Navbar() {
   // Reset semua accordion mobile setiap kali hamburger ditutup
   useEffect(() => {
     if (!isOpen) {
-      setMobileProdukOpen(false);
-      setMobileOpenCat(null);
-      setMobileAppOpen(false);
+      setTimeout(() => {
+        setMobileProdukOpen(false);
+        setMobileOpenCat(null);
+        setMobileAppOpen(false);
+      }, 0);
     }
   }, [isOpen]);
 
@@ -209,7 +211,7 @@ export default function Navbar() {
                   {MENU_APPLICATIONS.map((app) => (
                     <div key={app.id} className="bg-[#f8fafc] border border-[#e2e8f0] rounded-md p-3">
                       <p className="text-[0.85rem] font-bold text-[#0a1428] m-0 mb-1">{app.name}</p>
-                      <p className="text-[0.78rem] text-[#64748b] m-0 mb-2 leading-[1.5]">{app.desc}</p>
+                      <p className="text-[0.78rem] text-[#64748b] m-0 mb-2 leading-normal">{app.desc}</p>
                       <Button
                         href={waLink(`solusi kemasan untuk kebutuhan ${app.name}`)}
                         target="_blank"
@@ -315,14 +317,14 @@ export default function Navbar() {
 
                 {/* KOLOM 3: Preview Model Aktif (di md jadi baris penuh bawah) */}
                 <div className="md:col-span-2 lg:col-span-1 bg-[#f8fafc] border border-[#e2e8f0] rounded-sm p-6.25 flex flex-col">
-                  <div className="flex items-center justify-center h-[160px] mb-[15px] overflow-hidden">
+                  <div className="flex items-center justify-center h-40 mb-3.75 overflow-hidden">
                     <img src={activeCategory.image} alt={activeModel.name} className="max-h-full w-auto object-contain" onError={handleImgError} />
                   </div>
-                  <h4 className="text-[1.2rem] font-extrabold text-[#0a1428] mb-[6px]">{activeModel.name}</h4>
-                  <p className="text-[0.85rem] text-[#64748b] mb-[15px]">{activeModel.tagline}</p>
-                  <div className="space-y-[8px] mb-[20px]">
+                  <h4 className="text-[1.2rem] font-extrabold text-[#0a1428] mb-1.5">{activeModel.name}</h4>
+                  <p className="text-[0.85rem] text-[#64748b] mb-3.75">{activeModel.tagline}</p>
+                  <div className="space-y-2 mb-5">
                     {activeModel.specs.map((s, i) => (
-                      <div key={i} className="flex justify-between gap-[15px] text-[0.8rem] border-b border-[#e2e8f0] pb-[6px]">
+                      <div key={i} className="flex justify-between gap-3.75 text-[0.8rem] border-b border-[#e2e8f0] pb-1.5">
                         <span className="text-[#64748b]">{s.label}</span>
                         <span className="font-bold text-[#0a1428] text-right">{s.value}</span>
                       </div>
@@ -332,21 +334,21 @@ export default function Navbar() {
                     href={waLink(activeModel.name)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto px-[20px] py-[10px] rounded-[4px] text-[0.85rem] uppercase tracking-[0.5px]"
+                    className="mt-auto px-5 py-2.5 rounded-sm text-[0.85rem] uppercase tracking-[0.5px]"
                   >
                     Hubungi Marketing
                   </Button>
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-[20px]">
+              <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-5">
                 {/* KOLOM 1: Daftar Aplikasi Industri */}
-                <div className="space-y-[10px]">
+                <div className="space-y-2.5">
                   {MENU_APPLICATIONS.map((app) => (
                     <button
                       key={app.id}
                       onClick={() => setActiveApp(app)}
-                      className={`w-full text-left p-[15px] rounded-[4px] transition-colors ${activeApp.id === app.id ? 'bg-white shadow-sm border border-[#e2e8f0] text-[#c2182b] font-bold' : 'bg-[#f4f4f4] text-[#0a1428] hover:bg-[#ececec]'}`}
+                      className={`w-full text-left p-3.75 rounded-sm transition-colors ${activeApp.id === app.id ? 'bg-white shadow-sm border border-[#e2e8f0] text-[#c2182b] font-bold' : 'bg-[#f4f4f4] text-[#0a1428] hover:bg-[#ececec]'}`}
                     >
                       <span className="text-[0.9rem]">{app.name}</span>
                     </button>
@@ -354,7 +356,7 @@ export default function Navbar() {
                 </div>
 
                 {/* KOLOM 2: Preview Aplikasi Aktif */}
-                <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[4px] p-[25px] lg:p-7.5 flex flex-col">
+                <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-sm p-6.25 lg:p-7.5 flex flex-col">
                   <h4 className="text-[1.3rem] font-extrabold text-[#0a1428] mb-2.5">{activeApp.name}</h4>
                   <p className="text-[0.9rem] text-[#64748b] leading-[1.7] mb-5">{activeApp.desc}</p>
                   <Button

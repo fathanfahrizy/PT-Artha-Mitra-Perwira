@@ -1,5 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 
+const DEFAULT_GRIDS = {
+  "6x4": { rows: 4, cols: 6 },
+  "8x8": { rows: 8, cols: 8 },
+  "8x3": { rows: 3, cols: 8 },
+  "4x6": { rows: 6, cols: 4 },
+  "3x8": { rows: 8, cols: 3 },
+};
+
 export const PixelImage = ({
   src,
   grid = "6x4",
@@ -12,14 +20,6 @@ export const PixelImage = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showColor, setShowColor] = useState(false);
-
-  const DEFAULT_GRIDS = {
-    "6x4": { rows: 4, cols: 6 },
-    "8x8": { rows: 8, cols: 8 },
-    "8x3": { rows: 3, cols: 8 },
-    "4x6": { rows: 6, cols: 4 },
-    "3x8": { rows: 8, cols: 3 },
-  };
 
   const MIN_GRID = 1;
   const MAX_GRID = 16;
@@ -42,11 +42,14 @@ export const PixelImage = ({
   }, [customGrid, grid]);
 
   useEffect(() => {
-    setIsVisible(true);
+    const visibleTimeout = setTimeout(() => setIsVisible(true), 10);
     const colorTimeout = setTimeout(() => {
       setShowColor(true);
     }, colorRevealDelay);
-    return () => clearTimeout(colorTimeout);
+    return () => {
+      clearTimeout(visibleTimeout);
+      clearTimeout(colorTimeout);
+    };
   }, [colorRevealDelay]);
 
   const pieces = useMemo(() => {
@@ -62,7 +65,8 @@ export const PixelImage = ({
         ${col * (100 / cols)}% ${(row + 1) * (100 / rows)}%
       )`;
 
-      const delay = Math.random() * maxAnimationDelay;
+      const pseudoRandom = ((index * 9301 + 49297) % 233280) / 233280;
+      const delay = pseudoRandom * maxAnimationDelay;
       return { clipPath, delay };
     });
   }, [rows, cols, maxAnimationDelay]);

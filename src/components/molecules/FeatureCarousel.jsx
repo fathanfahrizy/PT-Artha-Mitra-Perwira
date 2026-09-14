@@ -18,7 +18,7 @@
  * Dipakai di: organisms/ProductsSection.jsx
  * Data    : data/homeData.js (FEATURES_CAROUSEL: id, label, icon, image, description, specs)
  */
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/cn";
 import ProductCard from "./ProductCard";
@@ -43,7 +43,7 @@ export default function FeatureCarousel({ features = [] }) {
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   // Peta posisi y terakhir tiap chip → buat deteksi lompatan "wrap"
-  const prevYMap = useRef({});
+  const [prevYMap, setPrevYMap] = useState({});
 
   const currentIndex =
     ((step % features.length) + features.length) % features.length;
@@ -64,7 +64,9 @@ export default function FeatureCarousel({ features = [] }) {
       const d = wrap(-(features.length / 2), features.length / 2, i - currentIndex);
       next[feature.id] = d * ITEM_HEIGHT;
     });
-    prevYMap.current = next;
+    setTimeout(() => {
+      setPrevYMap(next);
+    }, 0);
   }, [currentIndex, features]);
 
   // --- Handler swipe touch (area card) — cara ganti slide di HP ---
@@ -101,13 +103,13 @@ export default function FeatureCarousel({ features = [] }) {
 
   return (
     <div className="w-full max-w-300 mx-auto md:p-8">
-      <div className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] lg:rounded-[4rem] flex flex-col lg:flex-row lg:aspect-video border border-[#e2e8f0]/40 shadow-[0_20px_50px_-20px_rgba(10,20,40,0.3)]">
+      <div className="relative overflow-hidden rounded-3xl md:rounded-[2.5rem] lg:rounded-[4rem] flex flex-col lg:flex-row lg:aspect-video border border-[#e2e8f0]/40 shadow-[0_20px_50px_-20px_rgba(10,20,40,0.3)]">
         
         {/* KOLOM KIRI: Chip list — slide spring untuk tetangga, fade-teleport untuk wrap */}
-        <div className="w-full lg:w-[40%] min-h-[210px] sm:min-h-[260px] md:min-h-[320px] lg:h-full lg:min-h-0 relative z-30 flex flex-col items-start justify-center overflow-hidden px-6 sm:px-10 md:px-14 lg:pl-16 bg-[#0a1428]">
+        <div className="w-full lg:w-[40%] min-h-52.5 sm:min-h-65 md:min-h-80 lg:h-full lg:min-h-0 relative z-30 flex flex-col items-start justify-center overflow-hidden px-6 sm:px-10 md:px-14 lg:pl-16 bg-[#0a1428]">
           {/* Gradient fade atas & bawah biar chip yang masuk/keluar tepi mulus */}
-          <div className="absolute inset-x-0 top-0 h-10 md:h-20 lg:h-16 bg-gradient-to-b from-[#0a1428] via-[#0a1428]/80 to-transparent z-40 pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-10 md:h-20 lg:h-16 bg-gradient-to-t from-[#0a1428] via-[#0a1428]/80 to-transparent z-40 pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-10 md:h-20 lg:h-16 bg-linear-to-b from-[#0a1428] via-[#0a1428]/80 to-transparent z-40 pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-10 md:h-20 lg:h-16 bg-linear-to-t from-[#0a1428] via-[#0a1428]/80 to-transparent z-40 pointer-events-none" />
           
           <div className="relative w-full h-full flex items-center justify-center lg:justify-start z-20">
             {features.map((feature, index) => {
@@ -121,7 +123,7 @@ export default function FeatureCarousel({ features = [] }) {
               const targetOpacity = 1 - Math.abs(wrappedDistance) * 0.25;
 
               // Deteksi wrap: posisi baru beda jauh (>1.5 slot) dari posisi terakhir
-              const prevY = prevYMap.current[feature.id];
+              const prevY = prevYMap[feature.id];
               const isWrap =
                 prevY !== undefined && Math.abs(y - prevY) > ITEM_HEIGHT * 1.5;
 
@@ -192,12 +194,12 @@ export default function FeatureCarousel({ features = [] }) {
 
         {/* KOLOM KANAN: Stack ProductCard (gerak horizontal; opacity cepat biar ghost cepat bersih) */}
         <div
-          className="flex-1 min-h-[420px] sm:min-h-[480px] md:min-h-[560px] lg:h-full lg:min-h-0 relative bg-[#f8fafc] flex items-center justify-center py-12 md:py-16 lg:py-16 px-4 sm:px-8 md:px-12 lg:px-10 overflow-hidden border-t lg:border-t-0 lg:border-l border-[#e2e8f0]/20"
+          className="flex-1 min-h-105 sm:min-h-120 md:min-h-140 lg:h-full lg:min-h-0 relative bg-[#f8fafc] flex items-center justify-center py-12 md:py-16 lg:py-16 px-4 sm:px-8 md:px-12 lg:px-10 overflow-hidden border-t lg:border-t-0 lg:border-l border-[#e2e8f0]/20"
           style={{ touchAction: "pan-y" }}
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
-          <div className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] aspect-[4/5] flex items-center justify-center">
+          <div className="relative w-full max-w-[320px] sm:max-w-95 md:max-w-105 aspect-4/5 flex items-center justify-center">
             {features.map((feature, index) => {
               const status = getCardStatus(index);
               const isActive = status === "active";
