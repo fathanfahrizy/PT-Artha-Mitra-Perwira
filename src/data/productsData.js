@@ -38,5 +38,5 @@ export const PRODUCTS = [
         image: "/images/foto-siku.png",
         tagline: 'Pelindung sudut produk agar tetap aman selama pengiriman dan stacking.',
         specs: SPECS_SIKU_KARTON
-    }
+    },
 ];
