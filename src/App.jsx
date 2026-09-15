@@ -1,16 +1,24 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import MainLayout from './components/templates/MainLayout';
-import Home from './pages/Home';
-import Product from './pages/Product';
+
+const Home = lazy(() => import('./pages/Home'));
+const Product = lazy(() => import('./pages/Product'));
 
 function App() {
   return (
     <BrowserRouter>
       <MainLayout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/produk" element={<Product />} />
-        </Routes>
+        <Suspense fallback={
+          <div className="flex h-screen items-center justify-center">
+            <div className="text-2xl font-bold">Loading Contents...</div>
+          </div>
+        }>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/produk" element={<Product />} />
+          </Routes>
+        </Suspense>
       </MainLayout>
     </BrowserRouter>
   );
