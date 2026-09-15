@@ -67,19 +67,19 @@ const SPECS_PENGIRIMAN = [
 export const PRODUCTS = [
   {
     title: "KARTON BOX",
-    image: "/images/foto-karton.png",
+    image: "/images/foto-karton.webp",
     tagline: 'Kuat, presisi, dan siap custom untuk semua kebutuhan pengemasan industri Anda.',
     specs: SPECS_KARTON_BOX
   },
   {
     title: "PALLET KARTON",
-    image: "/images/foto-pallet.png",
+    image: "/images/foto-pallet.webp",
     tagline: 'Ringan, tahan beban berat, dan aman untuk kebutuhan ekspor.',
     specs: SPECS_PALLET_KARTON
   },
   {
     title: "SIKU KARTON",
-    image: "/images/foto-siku.png",
+    image: "/images/foto-siku.webp",
     tagline: 'Pelindung sudut produk agar tetap aman selama pengiriman dan stacking.',
     specs: SPECS_SIKU_KARTON
   }
@@ -99,7 +99,7 @@ export const FEATURES_CAROUSEL = [
     id: "karton-box",
     label: "Karton Box",
     icon: FaBoxOpen,
-    image: "/images/foto-karton.png",
+    image: "/images/foto-karton.webp",
     description: "Kemasan karton bergelombang berkualitas tinggi, siap custom untuk semua kebutuhan industri Anda.",
     specs: SPECS_KARTON_BOX
   },
@@ -107,7 +107,7 @@ export const FEATURES_CAROUSEL = [
     id: "pallet-karton",
     label: "Pallet Karton",
     icon: FaWeightHanging,
-    image: "/images/foto-pallet.png",
+    image: "/images/foto-pallet.webp",
     description: "Pallet honeycomb ringan & kuat, bebas fumigasi ISPM 15 untuk kebutuhan ekspor internasional.",
     specs: SPECS_PALLET_KARTON
   },
@@ -115,7 +115,7 @@ export const FEATURES_CAROUSEL = [
     id: "siku-karton",
     label: "Siku Karton",
     icon: FaShieldHalved,
-    image: "/images/foto-siku.png",
+    image: "/images/foto-siku.webp",
     description: "Paper angle pelindung sudut produk, menjaga keamanan selama pengiriman dan stacking tinggi.",
     specs: SPECS_SIKU_KARTON
   },

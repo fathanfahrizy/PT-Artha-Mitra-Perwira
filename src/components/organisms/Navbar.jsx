@@ -71,9 +71,9 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-17.5 md:h-20">
           {/* LOGO SECTION */}
           <a href="/" className="flex items-center gap-2.5 group" aria-label="PT Artha Mitra Perwira Home">
-            <img 
-              src="/images/logo-artha.png" 
-              alt="Logo PT Artha Mitra Perwira" 
+            <img
+              src="/images/logo-artha.webp"
+              alt="Logo PT Artha Mitra Perwira"
               className="w-9 h-9 md:w-10 md:h-10 object-contain group-hover:scale-110 transition-transform duration-300"
             />
             <div>

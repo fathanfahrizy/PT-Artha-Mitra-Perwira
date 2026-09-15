@@ -48,43 +48,43 @@ const SPECS_PP_BOARD = [
 export const PRODUCTS = [
     {
         title: "KARTON BOX",
-        image: "/images/foto-karton.png",
+        image: "/images/foto-karton.webp",
         tagline: 'Kuat, presisi, dan siap custom untuk semua kebutuhan pengemasan industri Anda.',
         specs: SPECS_KARTON_BOX
     },
     {
         title: "PALLET KARTON",
-        image: "/images/foto-pallet.png",
+        image: "/images/foto-pallet.webp",
         tagline: 'Ringan, tahan beban berat, dan aman untuk kebutuhan ekspor.',
         specs: SPECS_PALLET_KARTON
     },
     {
         title: "SIKU KARTON",
-        image: "/images/foto-siku.png",
+        image: "/images/foto-siku.webp",
         tagline: 'Pelindung sudut produk agar tetap aman selama pengiriman dan stacking.',
         specs: SPECS_SIKU_KARTON
     },
     {
         title: "PAPER CORE",
-        image: "/images/foto-paper-core.png",
+        image: "/images/foto-paper-core.webp",
         tagline: 'Solusi gulungan (tube) serbaguna untuk benang, kain, lakban, dan plastik.',
         specs: SPECS_PAPER_CORE
     },
     {
         title: "PARTISI KARTON",
-        image: "/images/foto-partisi-karton.png",
+        image: "/images/foto-partisi-karton.webp",
         tagline: 'Sekat pelindung interior box untuk menjaga produk tetap utuh tanpa benturan.',
         specs: SPECS_PARTISI_KARTON
     },
     {
         title: "PE FOAM",
-        image: "/images/foto-pe-foam.png",
+        image: "/images/foto-pe-foam.webp",
         tagline: 'Busa pelindung ringan dan elastis, anti gores untuk permukaan barang presisi.',
         specs: SPECS_PE_FOAM
     },
     {
         title: "PP BOARD",
-        image: "/images/foto-pp-board.png",
+        image: "/images/foto-pp-board.webp",
         tagline: 'Lembaran plastik berongga yang tangguh, anti air, dan tahan lama.',
         specs: SPECS_PP_BOARD
     }

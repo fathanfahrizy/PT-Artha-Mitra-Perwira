@@ -14,7 +14,7 @@ export default function Product() {
                 }
                 description="Berikut adalah kategori produk karton berkualitas tinggi yang kami sediakan untuk mendukung industri Anda."
                 badges={[]}
-                imageSrc="/images/foto-hero.jpeg"
+                imageSrc="/images/foto-hero.webp"
             />
             <ProductsSection title="KATALOG PRODUK LENGKAP" products={PRODUCTS} />
         </>

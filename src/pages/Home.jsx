@@ -20,7 +20,7 @@ export default function Home() {
         }
         description="Kami menyediakan produk karton berkualitas tinggi, layanan percetakan umum, serta kebutuhan consumable production dengan harga kompetitif untuk mendukung industri Anda."
         badges={HERO_BADGES}
-        imageSrc="/images/foto-hero.jpeg"
+        imageSrc="/images/foto-hero.webp"
       />
       <ProductsSection />
       <AboutSection />
