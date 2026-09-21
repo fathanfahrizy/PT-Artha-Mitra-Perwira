@@ -13,7 +13,7 @@ export const MENU_CATEGORIES = [
   {
     id: 'karton-box',
     name: 'Karton Box',
-    image: '/foto-karton.jpg',
+    image: '/images/foto-karton.webp',
     models: [
       {
         id: 'rsc',
@@ -60,7 +60,7 @@ export const MENU_CATEGORIES = [
   {
     id: 'pallet-karton',
     name: 'Pallet Karton',
-    image: '/foto-pallet.jpg',
+    image: '/images/foto-pallet.webp',
     models: [
       {
         id: 'pallet-standar',
@@ -97,7 +97,7 @@ export const MENU_CATEGORIES = [
   {
     id: 'siku-karton',
     name: 'Siku Karton',
-    image: '/foto-siku.jpg',
+    image: '/images/foto-siku.webp',
     models: [
       {
         id: 'siku-50',
@@ -134,25 +134,15 @@ export const MENU_CATEGORIES = [
 ];
 
 // Data tab Aplikasi Industri
-export const MENU_APPLICATIONS = [
+export const MENU_APPLICATIONS = [ 
   {
-    id: 'logistik',
-    name: 'Logistik & Ekspor',
-    desc: 'Pallet dan box karton bebas fumigasi (ISPM 15) untuk kebutuhan pengiriman domestik maupun ekspor, aman untuk kontainer dan stacking gudang.'
+    id: 'percetakan',
+    name: 'Percetakan Umum',
+    desc: 'Cetak Surat jalan, Inner Box, Box Makanan, Kartu Nama Kop surat, Company profile, Undangan, dll.'
   },
   {
-    id: 'fnb',
-    name: 'Makanan & Minuman',
-    desc: 'Kemasan karton food-grade safe dengan ventilasi sesuai kebutuhan produk konsumsi, menjaga kebersihan dan keamanan selama distribusi.'
-  },
-  {
-    id: 'elektronik',
-    name: 'Elektronik & Komponen',
-    desc: 'Proteksi ganda menggunakan siku karton dan lapisan pelindung untuk barang sensitif terhadap benturan selama pengiriman.'
-  },
-  {
-    id: 'retail',
-    name: 'Retail & E-Commerce',
-    desc: 'Die-cut box dengan printing brand untuk pengalaman unboxing yang profesional dan meningkatkan citra produk Anda.'
+    id: 'general',
+    name: 'Barang General',
+    desc: 'Membuat PE Foam, Roda Lory, Plastik Bubble, Bucket Impraboard, dll.'
   }
 ];
