@@ -4,6 +4,7 @@ import MainLayout from './components/templates/MainLayout';
 
 const Home = lazy(() => import('./pages/Home'));
 const Product = lazy(() => import('./pages/Product'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/produk" element={<Product />} />
+            <Route path="/produk/:slug" element={<ProductDetail />} />
           </Routes>
         </Suspense>
       </MainLayout>

@@ -47,45 +47,59 @@ const SPECS_PP_BOARD = [
 
 export const PRODUCTS = [
     {
+        slug: "karton-box",
         title: "KARTON BOX",
         image: "/images/foto-karton.webp",
         tagline: 'Kuat, presisi, dan siap custom untuk semua kebutuhan pengemasan industri Anda.',
+        description: 'Karton Box kami diproduksi menggunakan bahan Kraft berkualitas tinggi yang memberikan perlindungan maksimal terhadap produk Anda. Cocok untuk kebutuhan logistik, distribusi e-commerce, maupun display retail. Kami menyediakan kustomisasi penuh dari segi dimensi, ketebalan (single/double wall), hingga desain printing untuk memperkuat identitas brand Anda.',
         specs: SPECS_KARTON_BOX
     },
     {
+        slug: "pallet-karton",
         title: "PALLET KARTON",
         image: "/images/foto-pallet.webp",
         tagline: 'Ringan, tahan beban berat, dan aman untuk kebutuhan ekspor.',
+        description: 'Pallet Karton merupakan alternatif ramah lingkungan dan hemat biaya dibandingkan pallet kayu tradisional. Memenuhi standar ISPM 15 karena bebas dari hama dan jamur tanpa perlu perlakuan fumigasi, sehingga sangat ideal untuk kebutuhan ekspor. Desainnya yang ringan memangkas biaya pengiriman namun tetap mampu menahan beban statis hingga 1.500 kg.',
         specs: SPECS_PALLET_KARTON
     },
     {
+        slug: "siku-karton",
         title: "SIKU KARTON",
         image: "/images/foto-siku.webp",
         tagline: 'Pelindung sudut produk agar tetap aman selama pengiriman dan stacking.',
+        description: 'Siku Karton (Edge Protector) dirancang untuk melindungi tepian produk dari kerusakan akibat benturan atau ikatan tali strapping yang terlalu kencang. Penggunaan siku karton secara signifikan meningkatkan stabilitas palet saat proses tumpukan (stacking), memastikan produk tiba di tujuan dalam kondisi sempurna tanpa penyok.',
         specs: SPECS_SIKU_KARTON
     },
     {
+        slug: "paper-core",
         title: "PAPER CORE",
         image: "/images/foto-paper-core.webp",
         tagline: 'Solusi gulungan (tube) serbaguna untuk benang, kain, lakban, dan plastik.',
+        description: 'Paper Core kami terbuat dari lilitan kertas kraft presisi tinggi yang menghasilkan tabung dengan tingkat kepadatan dan kekuatan tekan yang superior. Produk ini sangat esensial sebagai silinder inti untuk penggulungan berbagai material industri seperti tekstil, plastik film, lakban, hingga plat metal ringan.',
         specs: SPECS_PAPER_CORE
     },
     {
+        slug: "partisi-karton",
         title: "PARTISI KARTON",
         image: "/images/foto-partisi-karton.webp",
         tagline: 'Sekat pelindung interior box untuk menjaga produk tetap utuh tanpa benturan.',
+        description: 'Partisi Karton berfungsi sebagai sekat pemisah di dalam kotak utama untuk mencegah produk saling berbenturan dan lecet selama transit. Sangat direkomendasikan untuk pengemasan produk pecah belah, komponen otomotif presisi, botol kaca, atau barang elektronik. Kami menyesuaikan grid dan ketebalan partisi sesuai dengan dimensi produk Anda.',
         specs: SPECS_PARTISI_KARTON
     },
     {
+        slug: "pe-foam",
         title: "PE FOAM",
         image: "/images/foto-pe-foam.webp",
         tagline: 'Busa pelindung ringan dan elastis, anti gores untuk permukaan barang presisi.',
+        description: 'Polyethylene (PE) Foam adalah material pelindung superior dengan struktur sel tertutup yang memberikan daya redam kejut yang sangat baik. Permukaannya yang halus tidak abrasif menjadikannya pilihan utama untuk melindungi permukaan sensitif dari goresan, seperti layar elektronik, mebel kayu berpelitur, dan suku cadang presisi.',
         specs: SPECS_PE_FOAM
     },
     {
+        slug: "pp-board",
         title: "PP BOARD",
         image: "/images/foto-pp-board.webp",
         tagline: 'Lembaran plastik berongga yang tangguh, anti air, dan tahan lama.',
+        description: 'PP Board (Impraboard) adalah lembaran polipropilena berongga bergelombang yang menawarkan daya tahan ekstra terhadap air, minyak, dan zat kimia ringan. Sangat serbaguna untuk berbagai aplikasi industri, mulai dari kemasan yang dapat dipakai ulang (returnable packaging), kotak penyimpan, hingga papan promosi (signage) yang tahan cuaca.',
         specs: SPECS_PP_BOARD
     }
 ];

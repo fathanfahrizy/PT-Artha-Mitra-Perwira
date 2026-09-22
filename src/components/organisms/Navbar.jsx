@@ -275,7 +275,7 @@ export default function Navbar() {
                 onClick={() => setActiveTab('range')}
                 className="px-5 md:px-7.5 py-2.5 md:py-3 text-[0.85rem] md:text-[0.9rem] rounded-sm"
               >
-                Range Produk
+                List Produk
               </Button>
               <Button
                 variant={activeTab === 'application' ? 'active' : 'ghost'}

@@ -16,12 +16,12 @@
  * CSS  : class .flip-card dkk. global di src/index.css
  */
 import { useState } from 'react';
-import { waLink } from '../../data/navigationData';
+// import { waLink } from '../../data/navigationData';
 import { Button } from '../atoms/Button';
 
 export default function ProductCard({ prod, heightClass = "h-125 sm:h-130", onFlipChange = null }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const link = waLink(`produk ${prod.title}`);
+  // const link = waLink(`produk ${prod.title}`);
 
   // Setter tunggal biar parent (carousel) bisa tau status flip card
   const setFlip = (val) => {
@@ -58,9 +58,7 @@ export default function ProductCard({ prod, heightClass = "h-125 sm:h-130", onFl
             <p className="text-[0.85rem] sm:text-[0.9rem] text-[#64748b] mb-3.75 sm:mb-5 leading-[1.6]">{prod.tagline}</p>
             <div className="flex gap-2.5 mt-auto">
               <Button
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={`/produk/${prod.slug}`}
                 className="flex-1 px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem] uppercase tracking-[0.5px]"
               >
                 Discover
@@ -101,9 +99,7 @@ export default function ProductCard({ prod, heightClass = "h-125 sm:h-130", onFl
               Close
             </Button>
             <Button
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
+              to={`/produk/${prod.slug}`}
               className="flex-1 px-2 sm:px-3.75 py-2.5 rounded-sm text-[0.72rem] sm:text-[0.85rem]"
             >
               Discover

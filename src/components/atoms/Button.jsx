@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
+
 export function Button({ 
   children, 
   href, 
+  to,
   variant = 'primary', 
   className = '', 
   ...props 
@@ -13,6 +16,14 @@ export function Button({
     ghost: "bg-[#ececec] text-[#0a1428] hover:bg-[#e2e8f0]",
     active: "bg-[#c2182b] text-white hover:bg-[#a01526]",
   };
+
+  if (to) {
+    return (
+      <Link to={to} className={`${baseStyles} ${variants[variant] || ''} ${className}`} {...props}>
+        {children}
+      </Link>
+    );
+  }
 
   const Component = href ? 'a' : 'button';
 
