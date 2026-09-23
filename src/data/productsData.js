@@ -101,7 +101,7 @@ export const PRODUCTS = [
     {
         slug: "pe-foam",
         title: "PE FOAM",
-        image: "/images/foto-pe-foam.webp",
+        image: "/images/foto-pe-foam-besar.webp",
         tagline: 'Busa pelindung ringan dan elastis, anti gores untuk permukaan barang presisi.',
         description: 'Polyethylene (PE) Foam adalah material pelindung superior dengan struktur sel tertutup yang memberikan daya redam kejut yang sangat baik. Permukaannya yang halus tidak abrasif menjadikannya pilihan utama untuk melindungi permukaan sensitif dari goresan, seperti layar elektronik, mebel kayu berpelitur, dan suku cadang presisi.',
         specs: SPECS_PE_FOAM
@@ -117,7 +117,7 @@ export const PRODUCTS = [
     {
         slug: "percetakan-umum",
         title: "PERCETAKAN UMUM",
-        image: "/images/foto-karton.webp",
+        image: "/images/proses-percetakan.webp",
         tagline: 'Layanan percetakan komersial & kemasan cetak berkualitas tinggi untuk berbagai kebutuhan bisnis Anda.',
         description: 'Kami melayani berbagai kebutuhan percetakan umum mulai dari Surat Jalan, Inner Box, Box Makanan, Kartu Nama, Kop Surat, Company Profile, Undangan, hingga cetakan promosi khusus. Menggunakan mesin cetak offset & digital modern untuk menjamin ketajaman warna, kualitas bahan, dan presisi hasil cetakan.',
         specs: SPECS_PERCETAKAN_UMUM
@@ -125,7 +125,7 @@ export const PRODUCTS = [
     {
         slug: "barang-general",
         title: "BARANG GENERAL",
-        image: "/images/foto-pe-foam.webp",
+        image: "/images/kondisi-gudang.webp",
         tagline: 'Penyedia perlengkapan kemasan & aksesoris industri lengkap dan terpercaya.',
         description: 'Kami memenuhi berbagai kebutuhan perlengkapan & pendukung industri seperti PE Foam, Roda Lory, Plastik Bubble Wrap, Bucket Impraboard, dan aksesoris kemasan lainnya. Dirancang untuk meningkatkan efisiensi, keamanan, dan keandalan operasional pabrik mau pun pergudangan Anda.',
         specs: SPECS_BARANG_GENERAL

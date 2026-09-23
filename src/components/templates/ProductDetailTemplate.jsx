@@ -9,6 +9,7 @@ export default function ProductDetailTemplate({ product }) {
   return (
     <div className="bg-white text-[#1e293b] leading-[1.6]">
       <ProductDetailHero 
+        quote={product.tagline}
         productName={product.title}
         imageSrc={product.image}
       />
