@@ -12,7 +12,7 @@
  */
 import {
   FaLocationDot, FaPhone, FaWhatsapp, FaEnvelope, FaClock,
-  FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube
+  FaInstagram, FaTiktok
 } from 'react-icons/fa6';
 
 // Informasi kontak perusahaan (Card Kontak Home - layout korporat 4 kolom)
@@ -53,10 +53,8 @@ export const CONTACT_ITEMS = [
 
 // Sosial media perusahaan (ganti href dengan akun asli nanti)
 export const SOCIAL_LINKS = [
-  { icon: FaFacebookF, href: 'https://www.facebook.com/', label: 'Facebook' },
   { icon: FaInstagram, href: 'https://www.instagram.com/arthamitraperwira.pt/', label: 'Instagram' },
-  { icon: FaLinkedinIn, href: 'https://www.linkedin.com/', label: 'LinkedIn' },
-  { icon: FaYoutube, href: 'https://www.youtube.com/', label: 'YouTube' }
+  { icon: FaTiktok, href: 'https://www.tiktok.com/@artha_mitra_perwira', label: 'TikTok' }
 ];
 
 // List kontak versi FOOTER (kolom "Hubungi Kami" di Footer.jsx)
