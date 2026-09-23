@@ -13,6 +13,7 @@
  * Data: src/data/navigationData.js
  */
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBars, FaXmark, FaChevronDown } from 'react-icons/fa6';
 import { navLinks, MENU_CATEGORIES, MENU_APPLICATIONS, waLink } from '../../data/navigationData';
 import { Button } from '../atoms/Button';
@@ -70,7 +71,7 @@ export default function Navbar() {
       <div className="max-w-300 mx-auto px-3.75 md:px-5">
         <div className="flex justify-between items-center h-17.5 md:h-20">
           {/* LOGO SECTION */}
-          <a href="/" className="flex items-center gap-2.5 group" aria-label="PT Artha Mitra Perwira Home">
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label="PT Artha Mitra Perwira Home">
             <img
               src="/images/logo-artha.webp"
               alt="Logo PT Artha Mitra Perwira"
@@ -80,9 +81,9 @@ export default function Navbar() {
               <h1 className="text-[1.1rem] md:text-[1.3rem] font-bold text-[#0a1428] leading-[1.1]">PT ARTHA</h1>
               <span className="text-[0.65rem] md:text-[0.75rem] text-[#64748b] font-semibold">MITRA PERWIRA</span>
             </div>
-          </a>
+          </Link>
 
-          {/* Desktop Navigation (Beranda dihapus, Produk jadi mega menu) */}
+          {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-5 lg:gap-7.5">
             <li>
               <button
@@ -95,18 +96,32 @@ export default function Navbar() {
                 <FaChevronDown className={`text-[0.7rem] transition-transform duration-300 ${menuOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
               </button>
             </li>
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="text-[0.9rem] font-semibold text-[#1e293b] hover:text-[#c2182b] transition-colors duration-300 relative group"
-                  aria-label={`Navigate to ${link.name}`}
-                >
-                  {link.name}
-                  <span className="absolute -bottom-1.25 left-0 w-0 h-0.5 bg-[#c2182b] transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isRoute = link.href.startsWith('/');
+              return (
+                <li key={link.name}>
+                  {isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-[0.9rem] font-semibold text-[#1e293b] hover:text-[#c2182b] transition-colors duration-300 relative group"
+                      aria-label={`Navigate to ${link.name}`}
+                    >
+                      {link.name}
+                      <span className="absolute -bottom-1.25 left-0 w-0 h-0.5 bg-[#c2182b] transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-[0.9rem] font-semibold text-[#1e293b] hover:text-[#c2182b] transition-colors duration-300 relative group"
+                      aria-label={`Navigate to ${link.name}`}
+                    >
+                      {link.name}
+                      <span className="absolute -bottom-1.25 left-0 w-0 h-0.5 bg-[#c2182b] transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
 
           {/* CTA Button - Desktop */}
@@ -133,10 +148,10 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation — PRODUK & APLIKASI sekarang ACCORDION, bukan anchor polos */}
+        {/* Mobile Navigation */}
         {isOpen && (
           <ul className="md:hidden pb-5 space-y-2.5 max-h-[calc(100vh-70px)] overflow-y-auto" role="menu">
-            {/* ACCORDION 1: PRODUK (kategori → model/varian) */}
+            {/* ACCORDION 1: PRODUK */}
             <li role="none">
               <button
                 onClick={() => setMobileProdukOpen((o) => !o)}
@@ -162,7 +177,7 @@ export default function Navbar() {
                         <FaChevronDown className={`text-[0.6rem] transition-transform duration-300 ${mobileOpenCat === cat.id ? 'rotate-180' : ''}`} aria-hidden="true" />
                       </button>
 
-                      {/* Level 2: model/varian → scroll ke #produk */}
+                      {/* Level 2: model/varian */}
                       {mobileOpenCat === cat.id && (
                         <div className="mt-1.5 mb-1 ml-2 space-y-1.5">
                           <ul className="space-y-1">
@@ -191,7 +206,6 @@ export default function Navbar() {
                     </div>
                   ))}
 
-                  {/* CTA tanya produk via WA */}
                   <Button
                     href={waLink('produk kemasan karton')}
                     target="_blank"
@@ -204,7 +218,7 @@ export default function Navbar() {
               )}
             </li>
 
-            {/* ACCORDION 2: APLIKASI INDUSTRI (card desc + CTA WA + Discover) */}
+            {/* ACCORDION 2: APLIKASI INDUSTRI */}
             <li role="none">
               <button
                 onClick={() => setMobileAppOpen((o) => !o)}
@@ -247,18 +261,32 @@ export default function Navbar() {
             </li>
 
             {/* Link navigasi biasa */}
-            {navLinks.map((link) => (
-              <li key={link.name} role="none">
-                <a
-                  href={link.href}
-                  className="block text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
-                  onClick={closeMobileMenu}
-                  role="menuitem"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isRoute = link.href.startsWith('/');
+              return (
+                <li key={link.name} role="none">
+                  {isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="block text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
+                      onClick={closeMobileMenu}
+                      role="menuitem"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="block text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
+                      onClick={closeMobileMenu}
+                      role="menuitem"
+                    >
+                      {link.name}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
 
             {/* CTA utama */}
             <li className="pt-2.5 px-3.75">
