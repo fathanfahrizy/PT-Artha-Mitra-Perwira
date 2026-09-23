@@ -11,7 +11,7 @@ export default function AboutSection() {
           <div>
             <h2 className="text-[0.9rem] text-[#c2182b] font-bold uppercase mb-1.25">TENTANG KAMI</h2>
             <h1 className="text-[1.6rem] md:text-[2rem] font-extrabold text-[#0a1428] mb-4 md:mb-5 leading-[1.2]">
-              PT ARTHA <span className="text-[#c2182b]">MITRA PERWIRA</span>
+              PT ARTHA <span className="text-[#c2182b]">MITRA</span> PERWIRA
             </h1>
             <p className="text-[#64748b] mb-3.75 text-[0.95rem]">
               PT Artha Mitra Perwira adalah partner terpercaya yang bergerak dalam tiga pilar aktivitas bisnis utama untuk mendukung kebutuhan industri Anda:

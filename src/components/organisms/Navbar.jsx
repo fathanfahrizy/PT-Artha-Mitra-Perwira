@@ -78,9 +78,9 @@ export default function Navbar() {
               className="w-9 h-9 md:w-10 md:h-10 object-contain group-hover:scale-110 transition-transform duration-300"
             />
             <div>
-              <h1 className="text-[1.1rem] md:text-[1.3rem] font-bold text-[#c2182b] leading-[1.1]">PT ARTHA</h1>
-              <span className="text-[0.65rem] md:text-[0.75rem] text-[#000000] font-semibold">MITRA</span>
-              <span className="text-[0.65rem] md:text-[0.75rem] text-[#c2182b] font-semibold"> PERWIRA</span>
+              <h1 className="text-[1.1rem] md:text-[1.3rem] font-bold text-[#000000] leading-[1.1]">PT ARTHA</h1>
+              <span className="text-[0.65rem] md:text-[0.75rem] text-[#c2182b] font-semibold">MITRA</span>
+              <span className="text-[0.65rem] md:text-[0.75rem] text-[#000000] font-semibold"> PERWIRA</span>
             </div>
           </Link>
 
