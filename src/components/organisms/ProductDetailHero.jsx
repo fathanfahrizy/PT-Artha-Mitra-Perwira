@@ -11,7 +11,7 @@ export default function ProductDetailHero({
   return (
     <ScrollReveal>
       <section 
-        className="relative pt-27.5 md:pt-35 px-3.75 md:px-5 pb-15 md:pb-20 text-white min-h-112.5 md:min-h-130 flex flex-col justify-between overflow-hidden bg-slate-900"
+        className="relative pt-30 md:pt-40 px-3.75 md:px-5 pb-20 md:pb-28 text-white min-h-140 md:min-h-162.5 flex flex-col justify-between overflow-hidden bg-slate-900"
         aria-label="Hero section detail produk"
       >
         {/* Landscape background image with faded mask */}
@@ -20,8 +20,9 @@ export default function ProductDetailHero({
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
             style={{ backgroundImage: `url(${imageSrc})` }}
           >
-            {/* Gradient Overlay for faded down effect */}
-            <div className="absolute inset-0 bg-linear-to-b to-slate-950" />
+            {/* Subtle left & right horizontal fade + vertical downward fade overlays */}
+            <div className="absolute inset-0 bg-linear-to-r from-slate-950/70 via-transparent to-slate-950/70 pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-b from-slate-950/40 via-transparent to-slate-950/90 pointer-events-none" />
           </div>
         )}
 
