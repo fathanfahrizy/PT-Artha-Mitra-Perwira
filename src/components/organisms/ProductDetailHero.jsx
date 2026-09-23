@@ -21,7 +21,7 @@ export default function ProductDetailHero({
             style={{ backgroundImage: `url(${imageSrc})` }}
           >
             {/* Gradient Overlay for faded down effect */}
-            <div className="absolute inset-0 bg-linear-to-b from-slate-950/85 via-slate-950/75 to-slate-950" />
+            <div className="absolute inset-0 bg-linear-to-b to-slate-950" />
           </div>
         )}
 
