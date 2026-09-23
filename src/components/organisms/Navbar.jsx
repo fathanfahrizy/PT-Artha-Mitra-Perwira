@@ -164,19 +164,29 @@ export default function Navbar() {
 
                       {/* Level 2: model/varian → scroll ke #produk */}
                       {mobileOpenCat === cat.id && (
-                        <ul className="mt-1.5 mb-1 ml-2 space-y-1">
-                          {cat.models.map((model) => (
-                            <li key={model.id}>
-                              <a
-                                href="#produk"
-                                onClick={closeMobileMenu}
-                                className="block px-3 py-2 rounded-md text-[0.85rem] text-[#64748b] hover:text-[#c2182b] hover:bg-[#f8fafc] transition-colors duration-300"
-                              >
-                                {model.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="mt-1.5 mb-1 ml-2 space-y-1.5">
+                          <ul className="space-y-1">
+                            {cat.models.map((model) => (
+                              <li key={model.id}>
+                                <a
+                                  href="#produk"
+                                  onClick={closeMobileMenu}
+                                  className="block px-3 py-1.5 rounded-md text-[0.85rem] text-[#64748b] hover:text-[#c2182b] hover:bg-[#f8fafc] transition-colors duration-300"
+                                >
+                                  {model.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                          <Button
+                            to={`/produk/${cat.id}`}
+                            onClick={closeMobileMenu}
+                            variant="outline"
+                            className="w-full px-3 py-1.75 text-[0.8rem] rounded-md"
+                          >
+                            Discover {cat.name} Page
+                          </Button>
+                        </div>
                       )}
                     </div>
                   ))}
@@ -194,7 +204,7 @@ export default function Navbar() {
               )}
             </li>
 
-            {/* ACCORDION 2: APLIKASI INDUSTRI (card desc + CTA WA) */}
+            {/* ACCORDION 2: APLIKASI INDUSTRI (card desc + CTA WA + Discover) */}
             <li role="none">
               <button
                 onClick={() => setMobileAppOpen((o) => !o)}
@@ -212,14 +222,24 @@ export default function Navbar() {
                     <div key={app.id} className="bg-[#f8fafc] border border-[#e2e8f0] rounded-md p-3">
                       <p className="text-[0.85rem] font-bold text-[#0a1428] m-0 mb-1">{app.name}</p>
                       <p className="text-[0.78rem] text-[#64748b] m-0 mb-2 leading-normal">{app.desc}</p>
-                      <Button
-                        href={waLink(`solusi kemasan untuk kebutuhan ${app.name}`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full px-3 py-2 rounded-sm text-[0.75rem]"
-                      >
-                        Hubungi Marketing
-                      </Button>
+                      <div className="flex gap-2">
+                        <Button
+                          to={`/produk/${app.id}`}
+                          onClick={closeMobileMenu}
+                          variant="outline"
+                          className="flex-1 px-2.5 py-1.75 rounded-sm text-[0.75rem]"
+                        >
+                          Discover
+                        </Button>
+                        <Button
+                          href={waLink(`solusi kemasan untuk kebutuhan ${app.name}`)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 px-2.5 py-1.75 rounded-sm text-[0.75rem]"
+                        >
+                          Hubungi Marketing
+                        </Button>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -330,14 +350,24 @@ export default function Navbar() {
                       </div>
                     ))}
                   </div>
-                  <Button
-                    href={waLink(activeModel.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto px-5 py-2.5 rounded-sm text-[0.85rem] uppercase tracking-[0.5px]"
-                  >
-                    Hubungi Marketing
-                  </Button>
+                  <div className="mt-auto flex flex-col sm:flex-row gap-2.5">
+                    <Button
+                      to={`/produk/${activeCategory.id}`}
+                      onClick={() => setMenuOpen(false)}
+                      variant="outline"
+                      className="flex-1 px-4 py-2.5 rounded-sm text-[0.85rem] uppercase tracking-[0.5px]"
+                    >
+                      Discover
+                    </Button>
+                    <Button
+                      href={waLink(activeModel.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 px-4 py-2.5 rounded-sm text-[0.85rem] uppercase tracking-[0.5px]"
+                    >
+                      Hubungi Marketing
+                    </Button>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -359,14 +389,24 @@ export default function Navbar() {
                 <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-sm p-6.25 lg:p-7.5 flex flex-col">
                   <h4 className="text-[1.3rem] font-extrabold text-[#0a1428] mb-2.5">{activeApp.name}</h4>
                   <p className="text-[0.9rem] text-[#64748b] leading-[1.7] mb-5">{activeApp.desc}</p>
-                  <Button
-                    href={waLink(`solusi kemasan untuk kebutuhan ${activeApp.name}`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto w-full lg:w-max px-5 py-2.5 rounded-sm text-[0.85rem] uppercase tracking-[0.5px]"
-                  >
-                    Hubungi Marketing
-                  </Button>
+                  <div className="mt-auto flex flex-col sm:flex-row gap-3">
+                    <Button
+                      to={`/produk/${activeApp.id}`}
+                      onClick={() => setMenuOpen(false)}
+                      variant="outline"
+                      className="px-6 py-2.5 rounded-sm text-[0.85rem] uppercase tracking-[0.5px]"
+                    >
+                      Discover
+                    </Button>
+                    <Button
+                      href={waLink(`solusi kemasan untuk kebutuhan ${activeApp.name}`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2.5 rounded-sm text-[0.85rem] uppercase tracking-[0.5px]"
+                    >
+                      Hubungi Marketing
+                    </Button>
+                  </div>
                 </div>
               </div>
             )}

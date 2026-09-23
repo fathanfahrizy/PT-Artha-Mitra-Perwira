@@ -130,18 +130,86 @@ export const MENU_CATEGORIES = [
         ]
       }
     ]
+  },
+  {
+    id: 'paper-core',
+    name: 'Paper Core',
+    image: '/images/foto-paper-core.webp',
+    models: [
+      {
+        id: 'paper-core-std',
+        name: 'Paper Core Standar',
+        tagline: 'Solusi tube lilitan kertas kraft presisi tinggi.',
+        specs: [
+          { label: 'Material', value: 'Kraft Paper' },
+          { label: 'Diameter', value: 'Custom' },
+          { label: 'Sifat', value: 'Kuat & Presisi' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'partisi-karton',
+    name: 'Partisi Karton',
+    image: '/images/foto-partisi-karton.webp',
+    models: [
+      {
+        id: 'partisi-std',
+        name: 'Partisi Karton Grid',
+        tagline: 'Sekat pelindung interior box untuk mencegah benturan.',
+        specs: [
+          { label: 'Bentuk', value: 'Interlock grid' },
+          { label: 'Ukuran', value: 'Custom' },
+          { label: 'Fungsi', value: 'Proteksi produk' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pe-foam',
+    name: 'PE Foam',
+    image: '/images/foto-pe-foam.webp',
+    models: [
+      {
+        id: 'pe-foam-std',
+        name: 'PE Foam Busa Pelindung',
+        tagline: 'Busa pelindung elastis anti gores untuk barang presisi.',
+        specs: [
+          { label: 'Ketebalan', value: '1 mm - 10 mm' },
+          { label: 'Format', value: 'Roll / Sheet' },
+          { label: 'Sifat', value: 'Peredam benturan' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pp-board',
+    name: 'PP Board',
+    image: '/images/foto-pp-board.webp',
+    models: [
+      {
+        id: 'pp-board-std',
+        name: 'PP Board Impraboard',
+        tagline: 'Lembaran plastik berongga tangguh, anti air & tahan lama.',
+        specs: [
+          { label: 'Material', value: 'Polypropylene' },
+          { label: 'Keunggulan', value: 'Anti air' },
+          { label: 'Sifat', value: 'Reusable' }
+        ]
+      }
+    ]
   }
 ];
 
 // Data tab Aplikasi Industri
 export const MENU_APPLICATIONS = [ 
   {
-    id: 'percetakan',
+    id: 'percetakan-umum',
     name: 'Percetakan Umum',
     desc: 'Cetak Surat jalan, Inner Box, Box Makanan, Kartu Nama Kop surat, Company profile, Undangan, dll.'
   },
   {
-    id: 'general',
+    id: 'barang-general',
     name: 'Barang General',
     desc: 'Membuat PE Foam, Roda Lory, Plastik Bubble, Bucket Impraboard, dll.'
   }

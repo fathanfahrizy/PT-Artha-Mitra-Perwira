@@ -45,6 +45,18 @@ const SPECS_PP_BOARD = [
     { icon: FaRecycle, label: 'Sifat', value: 'Dapat dicuci dan digunakan berulang' }
 ];
 
+const SPECS_PERCETAKAN_UMUM = [
+    { icon: FaLayerGroup, label: 'Layanan Cetak', value: 'Surat Jalan, Inner Box, Box Makanan, Kop Surat, dll.' },
+    { icon: FaRulerCombined, label: 'Mesin & Presisi', value: 'Cetak Offset & Digital Modern' },
+    { icon: FaShieldHalved, label: 'Finishing', value: 'Laminasi Doff/Glossy, Foil, Die-cut' }
+];
+
+const SPECS_BARANG_GENERAL = [
+    { icon: FaCubes, label: 'Varian Produk', value: 'PE Foam, Roda Lory, Bubble Wrap, Bucket Impraboard' },
+    { icon: FaLayerGroup, label: 'Aplikasi', value: 'Perlengkapan Kemasan & Logistik Industri' },
+    { icon: FaShieldHalved, label: 'Kualitas', value: 'Standar Industri & Daya Tahan Tinggi' }
+];
+
 export const PRODUCTS = [
     {
         slug: "karton-box",
@@ -101,5 +113,21 @@ export const PRODUCTS = [
         tagline: 'Lembaran plastik berongga yang tangguh, anti air, dan tahan lama.',
         description: 'PP Board (Impraboard) adalah lembaran polipropilena berongga bergelombang yang menawarkan daya tahan ekstra terhadap air, minyak, dan zat kimia ringan. Sangat serbaguna untuk berbagai aplikasi industri, mulai dari kemasan yang dapat dipakai ulang (returnable packaging), kotak penyimpan, hingga papan promosi (signage) yang tahan cuaca.',
         specs: SPECS_PP_BOARD
+    },
+    {
+        slug: "percetakan-umum",
+        title: "PERCETAKAN UMUM",
+        image: "/images/foto-karton.webp",
+        tagline: 'Layanan percetakan komersial & kemasan cetak berkualitas tinggi untuk berbagai kebutuhan bisnis Anda.',
+        description: 'Kami melayani berbagai kebutuhan percetakan umum mulai dari Surat Jalan, Inner Box, Box Makanan, Kartu Nama, Kop Surat, Company Profile, Undangan, hingga cetakan promosi khusus. Menggunakan mesin cetak offset & digital modern untuk menjamin ketajaman warna, kualitas bahan, dan presisi hasil cetakan.',
+        specs: SPECS_PERCETAKAN_UMUM
+    },
+    {
+        slug: "barang-general",
+        title: "BARANG GENERAL",
+        image: "/images/foto-pe-foam.webp",
+        tagline: 'Penyedia perlengkapan kemasan & aksesoris industri lengkap dan terpercaya.',
+        description: 'Kami memenuhi berbagai kebutuhan perlengkapan & pendukung industri seperti PE Foam, Roda Lory, Plastik Bubble Wrap, Bucket Impraboard, dan aksesoris kemasan lainnya. Dirancang untuk meningkatkan efisiensi, keamanan, dan keandalan operasional pabrik mau pun pergudangan Anda.',
+        specs: SPECS_BARANG_GENERAL
     }
 ];
