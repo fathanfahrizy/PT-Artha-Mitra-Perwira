@@ -123,7 +123,7 @@ export const FEATURES_CAROUSEL = [
     id: "percetakan",
     label: "Percetakan Umum",
     icon: FaPrint,
-    image: "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/kondisi-gudang.webp",
     description: "Surat jalan, inner box, kartu nama, kop surat, company profile — semua kebutuhan cetak bisnis Anda.",
     specs: SPECS_PERCETAKAN
   },
@@ -131,23 +131,15 @@ export const FEATURES_CAROUSEL = [
     id: "consumable",
     label: "Consumable Production",
     icon: FaIndustry,
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/foto-pe-foam-besar.webp",
     description: "PE Foam, plastik bubble, roda lory, bucket impraboard — pendukung operasional pabrik Anda.",
     specs: SPECS_CONSUMABLE
-  },
-  {
-    id: "ekspor",
-    label: "Ekspor Global",
-    icon: FaGlobe,
-    image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=80",
-    description: "Mendukung pengiriman domestik & ekspor ke berbagai negara dengan standar internasional.",
-    specs: SPECS_EKSPOR
   },
   {
     id: "pengiriman",
     label: "Pengiriman Cepat",
     icon: FaTruckFast,
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/pengiriman-barang.webp",
     description: "Tepat waktu dengan armada sendiri untuk area Banten, Jakarta, dan sekitarnya.",
     specs: SPECS_PENGIRIMAN
   }
