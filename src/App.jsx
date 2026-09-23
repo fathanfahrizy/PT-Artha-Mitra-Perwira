@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
 import MainLayout from './components/templates/MainLayout';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -7,7 +7,29 @@ const Product = lazy(() => import('./pages/Product'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 
-function App() {
+function useScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+}
+
+function AppRoutes() {
+  useScrollToTop();
+
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/produk" element={<Product />} />
+      <Route path="/produk/:slug" element={<ProductDetail />} />
+      <Route path="/galeri" element={<Gallery />} />
+    </Routes>
+  );
+}
+
+export default function App() {
+
   return (
     <BrowserRouter>
       <MainLayout>
@@ -16,16 +38,9 @@ function App() {
             <div className="text-2xl font-bold">Loading Contents...</div>
           </div>
         }>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/produk" element={<Product />} />
-            <Route path="/produk/:slug" element={<ProductDetail />} />
-            <Route path="/galeri" element={<Gallery />} />
-          </Routes>
+        <AppRoutes />
         </Suspense>
       </MainLayout>
     </BrowserRouter>
   );
 }
-
-export default App;
