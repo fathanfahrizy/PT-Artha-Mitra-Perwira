@@ -6,6 +6,7 @@ export const GALLERY_CATEGORIES = [
   "Paper Core",
   "Partisi Karton",
   "PE Foam & PP Board",
+  "Percetakan Umum",
   "Fasilitas & Operasional"
 ];
 
@@ -153,5 +154,69 @@ export const GALLERY_ITEMS = [
     image: "/images/ruang-meeting.webp",
     heightClass: "h-88",
     description: "Fasilitas pertemuan untuk konsultasi kebutuhan kemasan kustom dan perencanaan bisnis."
+  },
+  {
+    id: 19,
+    title: "Inner Box Aston Putih Premium",
+    category: "Percetakan Umum",
+    image: "/images/aston-putih.webp",
+    heightClass: "h-80",
+    description: "Cetak inner box karton putih presisi tinggi untuk kemasan komersial dan retail."
+  },
+  {
+    id: 20,
+    title: "Kemasan Cetak Botol Bimagro 50 ml",
+    category: "Percetakan Umum",
+    image: "/images/bimagro-50-ml.webp",
+    heightClass: "h-64",
+    description: "Kemasan botol pertanian & agrokimia cetak warna presisi tinggi dengan lapisan pelindung."
+  },
+  {
+    id: 21,
+    title: "Box Kemasan Makanan Kebab Custom",
+    category: "Percetakan Umum",
+    image: "/images/kebab.webp",
+    heightClass: "h-88",
+    description: "Kemasan kertas food grade untuk bisnis kuliner dan franchise makanan."
+  },
+  {
+    id: 22,
+    title: "Kemasan Box NSE Superior",
+    category: "Percetakan Umum",
+    image: "/images/nse-superior.webp",
+    heightClass: "h-72",
+    description: "Kemasan produk industri dengan cetakan grafis tajam dan konstruksi kokoh."
+  },
+  {
+    id: 23,
+    title: "Inner Box Kemasan Parfum Exclusive",
+    category: "Percetakan Umum",
+    image: "/images/parfum.webp",
+    heightClass: "h-80",
+    description: "Box cetak mewah dan presisi khusus untuk produk kosmetik, parfum, dan produk kecantikan."
+  },
+  {
+    id: 24,
+    title: "Kemasan Cetak Karton Quasal",
+    category: "Percetakan Umum",
+    image: "/images/quasal.webp",
+    heightClass: "h-96",
+    description: "Cetak kemasan karton berkualitas dengan hasil potong die-cut yang rapi."
+  },
+  {
+    id: 25,
+    title: "Box Makanan Kuliner Soto MC Custom",
+    category: "Percetakan Umum",
+    image: "/images/soto-mc.webp",
+    heightClass: "h-72",
+    description: "Dus makanan custom cetak untuk restoran, catering, dan usaha kuliner."
+  },
+  {
+    id: 26,
+    title: "Kemasan Cetak Produk Spectrum",
+    category: "Percetakan Umum",
+    image: "/images/spectrum.webp",
+    heightClass: "h-84",
+    description: "Solusi cetak kemasan produk komersial beragam ukuran dan desain custom."
   }
 ];
