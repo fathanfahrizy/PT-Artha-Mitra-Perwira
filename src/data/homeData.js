@@ -51,12 +51,6 @@ const SPECS_CONSUMABLE = [
   { icon: FaBoxOpen, label: 'Ketersediaan', value: 'Ready stock' }
 ];
 
-const SPECS_EKSPOR = [
-  { icon: FaGlobe, label: 'Standar', value: 'ISPM 15 internasional' },
-  { icon: FaShieldHalved, label: 'Dokumen', value: 'Sertifikat lengkap' },
-  { icon: FaTruckFast, label: 'Jangkauan', value: 'Domestik & ekspor' }
-];
-
 const SPECS_PENGIRIMAN = [
   { icon: FaTruckFast, label: 'Armada', value: 'Armada sendiri' },
   { icon: FaClock, label: 'Lead Time', value: 'On-time delivery' },
