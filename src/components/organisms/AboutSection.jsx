@@ -45,7 +45,7 @@ export default function AboutSection() {
           </div>
           <div className="relative w-full aspect-4/3 lg:aspect-auto lg:h-112.5 overflow-hidden rounded-xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] group">
             <PixelImage
-              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80"
+              src="/images/kondisi-gudang.webp"
               customGrid={{ rows: 4, cols: 6 }}
               grayscaleAnimation
               className="w-full h-full group-hover:scale-105 transition-transform duration-700 ease-in-out"
