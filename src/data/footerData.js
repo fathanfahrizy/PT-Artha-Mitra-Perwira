@@ -20,16 +20,17 @@ export const FEATURES = [
 
 // Link navigasi cepat (kolom "Navigasi")
 export const QUICK_LINKS = [
-  { name: 'Beranda', href: '#beranda' },
-  { name: 'Produk', href: '#produk' },
-  { name: 'Tentang Kami', href: '#tentang' },
-  { name: 'Kontak', href: '#kontak' }
+  { name: 'Beranda', href: '/' },
+  { name: 'Produk', href: '/produk' },
+  { name: 'Tentang Kami', href: '/#tentang' },
+  { name: 'Galeri', href: '/galeri' },
+  { name: 'Kontak', href: '/#kontak' }
 ];
 
 // Daftar produk perusahaan (kolom "Produk Kami")
 export const PRODUCT_LINKS = [
-  { name: 'Karton Box', href: '#produk' },
-  { name: 'Pallet Karton', href: '#produk' },
-  { name: 'Siku Karton', href: '#produk' },
-  { name: 'Custom Packaging', href: '#kontak' }
+  { name: 'Karton Box', href: '/#produk' },
+  { name: 'Pallet Karton', href: '/#produk' },
+  { name: 'Siku Karton', href: '/#produk' },
+  { name: 'Custom Packaging', href: '/#produk' }
 ];
