@@ -54,7 +54,7 @@ export const CONTACT_ITEMS = [
 // Sosial media perusahaan (ganti href dengan akun asli nanti)
 export const SOCIAL_LINKS = [
   { icon: FaFacebookF, href: 'https://www.facebook.com/', label: 'Facebook' },
-  { icon: FaInstagram, href: 'https://www.instagram.com/', label: 'Instagram' },
+  { icon: FaInstagram, href: 'https://www.instagram.com/arthamitraperwira.pt/', label: 'Instagram' },
   { icon: FaLinkedinIn, href: 'https://www.linkedin.com/', label: 'LinkedIn' },
   { icon: FaYoutube, href: 'https://www.youtube.com/', label: 'YouTube' }
 ];
