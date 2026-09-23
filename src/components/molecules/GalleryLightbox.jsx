@@ -44,7 +44,7 @@ export default function GalleryLightbox({ item, onClose }) {
         </button>
 
         {/* Image Preview Container */}
-        <div className="w-full md:w-3/5 bg-black flex items-center justify-center min-h-[280px] max-h-[50vh] md:max-h-none overflow-hidden">
+        <div className="w-full md:w-3/5 bg-black flex items-center justify-center min-h-70 max-h-[50vh] md:max-h-none overflow-hidden">
           <img
             src={item.image}
             alt={item.title}
