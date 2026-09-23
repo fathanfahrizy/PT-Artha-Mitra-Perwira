@@ -5,9 +5,9 @@ export const waLink = (name) =>
 // Link navigasi biasa (BERANDA DIHAPUS sesuai permintaan)
 export const navLinks = [
   { name: 'Beranda', href: '/' },
-  { name: 'Tentang', href: '#tentang' },
-  { name: 'Kontak', href: '#kontak' },
-  { name: 'Galeri', href: '/galeri' }
+  { name: 'Tentang', href: '/#tentang' },
+  { name: 'Galeri', href: '/galeri' },
+  { name: 'Kontak', href: '/#kontak' },
 ];
 
 // Data Mega Menu Produk (gaya Range/Application ala Massey Ferguson)
