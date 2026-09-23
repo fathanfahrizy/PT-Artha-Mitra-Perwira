@@ -1,5 +1,6 @@
 import ProductDetailHero from '../organisms/ProductDetailHero';
 import ProductSpecsSection from '../organisms/ProductSpecsSection';
+import ProductSubCategorySection from '../organisms/ProductSubCategorySection';
 import ContactSection from '../organisms/ContactSection';
 import ScrollReveal from '../atoms/ScrollReveal';
 
@@ -24,6 +25,12 @@ export default function ProductDetailTemplate({ product }) {
           </section>
         </ScrollReveal>
       )}
+
+      {/* Conditional Sub-Category 2-Column Section */}
+      <ProductSubCategorySection 
+        subCategories={product.subCategories} 
+        fallbackImage={product.image}
+      />
       
       <ProductSpecsSection specs={product.specs} />
       

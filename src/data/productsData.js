@@ -64,7 +64,53 @@ export const PRODUCTS = [
         image: "/images/foto-karton.webp",
         tagline: 'Kuat, presisi, dan siap custom untuk semua kebutuhan pengemasan industri Anda.',
         description: 'Karton Box kami diproduksi menggunakan bahan Kraft berkualitas tinggi yang memberikan perlindungan maksimal terhadap produk Anda. Cocok untuk kebutuhan logistik, distribusi e-commerce, maupun display retail. Kami menyediakan kustomisasi penuh dari segi dimensi, ketebalan (single/double wall), hingga desain printing untuk memperkuat identitas brand Anda.',
-        specs: SPECS_KARTON_BOX
+        specs: SPECS_KARTON_BOX,
+        subCategories: [
+            {
+                id: 'rsc',
+                name: 'Regular Slotted Container (RSC)',
+                tagline: 'Tipe box paling umum untuk pengiriman industri & pergudangan.',
+                image: '/images/foto-karton-box.webp',
+                specs: [
+                    { label: 'Material', value: 'Kraft K150 - K350' },
+                    { label: 'Flute', value: 'B / C / BC' },
+                    { label: 'Ukuran', value: 'Custom' }
+                ]
+            },
+            {
+                id: 'die-cut',
+                name: 'Die-Cut Box',
+                tagline: 'Box presisi dengan potongan khusus untuk tampilan retail.',
+                image: '/images/foto-karton.webp',
+                specs: [
+                    { label: 'Material', value: 'Kraft + Printing' },
+                    { label: 'Flute', value: 'B / E' },
+                    { label: 'Finishing', value: 'Custom print' }
+                ]
+            },
+            {
+                id: 'telescopic',
+                name: 'Telescopic Box',
+                tagline: 'Box dua bagian untuk produk dengan tinggi bervariasi.',
+                image: '/images/foto-karton-box.webp',
+                specs: [
+                    { label: 'Model', value: 'Tutup & dasar terpisah' },
+                    { label: 'Flute', value: 'C / BC' },
+                    { label: 'Ukuran', value: 'Custom' }
+                ]
+            },
+            {
+                id: 'wrap-around',
+                name: 'Wrap Around Box',
+                tagline: 'Box pembungkus untuk lini packing kecepatan tinggi.',
+                image: '/images/foto-karton.webp',
+                specs: [
+                    { label: 'Aplikasi', value: 'Machine packing' },
+                    { label: 'Flute', value: 'B / E' },
+                    { label: 'Ukuran', value: 'Custom' }
+                ]
+            }
+        ]
     },
     {
         slug: "pallet-karton",
@@ -72,7 +118,42 @@ export const PRODUCTS = [
         image: "/images/foto-pallet.webp",
         tagline: 'Ringan, tahan beban berat, dan aman untuk kebutuhan ekspor.',
         description: 'Pallet Karton merupakan alternatif ramah lingkungan dan hemat biaya dibandingkan pallet kayu tradisional. Memenuhi standar ISPM 15 karena bebas dari hama dan jamur tanpa perlu perlakuan fumigasi, sehingga sangat ideal untuk kebutuhan ekspor. Desainnya yang ringan memangkas biaya pengiriman namun tetap mampu menahan beban statis hingga 1.500 kg.',
-        specs: SPECS_PALLET_KARTON
+        specs: SPECS_PALLET_KARTON,
+        subCategories: [
+            {
+                id: 'pallet-standar',
+                name: 'Pallet Karton Standar',
+                tagline: 'Pallet ringan dan ekonomis untuk distribusi domestik.',
+                image: '/images/foto-pallet.webp',
+                specs: [
+                    { label: 'Kapasitas Beban', value: 's/d 1.000 kg' },
+                    { label: 'Ukuran', value: '1200 x 1000 mm' },
+                    { label: 'Berat', value: '± 4 kg' }
+                ]
+            },
+            {
+                id: 'pallet-heavy',
+                name: 'Pallet Karton Heavy Duty',
+                tagline: 'Konstruksi berlapis untuk beban berat & stacking tinggi.',
+                image: '/images/foto-paper-pallet.webp',
+                specs: [
+                    { label: 'Kapasitas Beban', value: 's/d 1.500 kg' },
+                    { label: 'Lapisan', value: 'Multi-wall' },
+                    { label: 'Ukuran', value: 'Custom' }
+                ]
+            },
+            {
+                id: 'pallet-ekspor',
+                name: 'Pallet Karton Ekspor',
+                tagline: 'Bebas fumigasi, memenuhi standar ekspor internasional.',
+                image: '/images/foto-pallet.webp',
+                specs: [
+                    { label: 'Standar', value: 'ISPM 15' },
+                    { label: 'Kapasitas Beban', value: 's/d 1.200 kg' },
+                    { label: 'Dokumen', value: 'Sertifikat tersedia' }
+                ]
+            }
+        ]
     },
     {
         slug: "siku-karton",
@@ -80,7 +161,42 @@ export const PRODUCTS = [
         image: "/images/foto-siku.webp",
         tagline: 'Pelindung sudut produk agar tetap aman selama pengiriman dan stacking.',
         description: 'Siku Karton (Edge Protector) dirancang untuk melindungi tepian produk dari kerusakan akibat benturan atau ikatan tali strapping yang terlalu kencang. Penggunaan siku karton secara signifikan meningkatkan stabilitas palet saat proses tumpukan (stacking), memastikan produk tiba di tujuan dalam kondisi sempurna tanpa penyok.',
-        specs: SPECS_SIKU_KARTON
+        specs: SPECS_SIKU_KARTON,
+        subCategories: [
+            {
+                id: 'siku-50',
+                name: 'Siku Karton 50 x 50 mm',
+                tagline: 'Proteksi sudut standar untuk karton dan palet.',
+                image: '/images/foto-siku.webp',
+                specs: [
+                    { label: 'Ketebalan', value: '3 - 5 mm' },
+                    { label: 'Panjang', value: 's/d 2.000 mm' },
+                    { label: 'Warna', value: 'Natural kraft' }
+                ]
+            },
+            {
+                id: 'siku-100',
+                name: 'Siku Karton 100 x 100 mm',
+                tagline: 'Penopang sudut ekstra untuk beban stacking tinggi.',
+                image: '/images/foto-siku.webp',
+                specs: [
+                    { label: 'Ketebalan', value: '4 - 6 mm' },
+                    { label: 'Panjang', value: 's/d 2.400 mm' },
+                    { label: 'Warna', value: 'Natural kraft' }
+                ]
+            },
+            {
+                id: 'siku-custom',
+                name: 'Siku Karton Custom',
+                tagline: 'Dimensi dan printing sesuai kebutuhan brand Anda.',
+                image: '/images/foto-siku.webp',
+                specs: [
+                    { label: 'Dimensi', value: 'Sesuai permintaan' },
+                    { label: 'Printing', value: 'Opsional' },
+                    { label: 'MOQ', value: 'Fleksibel' }
+                ]
+            }
+        ]
     },
     {
         slug: "paper-core",
@@ -120,7 +236,42 @@ export const PRODUCTS = [
         image: "/images/proses-percetakan.webp",
         tagline: 'Layanan percetakan komersial & kemasan cetak berkualitas tinggi untuk berbagai kebutuhan bisnis Anda.',
         description: 'Kami melayani berbagai kebutuhan percetakan umum mulai dari Surat Jalan, Inner Box, Box Makanan, Kartu Nama, Kop Surat, Company Profile, Undangan, hingga cetakan promosi khusus. Menggunakan mesin cetak offset & digital modern untuk menjamin ketajaman warna, kualitas bahan, dan presisi hasil cetakan.',
-        specs: SPECS_PERCETAKAN_UMUM
+        specs: SPECS_PERCETAKAN_UMUM,
+        subCategories: [
+            {
+                id: 'inner-box-astons',
+                name: 'Inner Box & Retail Box',
+                tagline: 'Dus kemasan cetak untuk obat, kosmetik, & produk retail.',
+                image: '/images/aston-putih.webp',
+                specs: [
+                    { label: 'Material', value: 'Duplex / Ivory' },
+                    { label: 'Finishing', value: 'Varnish / Laminasi' },
+                    { label: 'Cetak', value: 'Offset Full Color' }
+                ]
+            },
+            {
+                id: 'box-kuliner',
+                name: 'Box Makanan & Kuliner',
+                tagline: 'Dus makanan food-grade custom desain untuk resto & catering.',
+                image: '/images/kebab.webp',
+                specs: [
+                    { label: 'Bahan', value: 'Food Grade Paper' },
+                    { label: 'Tipe', value: 'Lunch Box / Food Pail' },
+                    { label: 'Fitur', value: 'Anti Bocor & Minyak' }
+                ]
+            },
+            {
+                id: 'company-profile',
+                name: 'Surat Jalan & Promosi',
+                tagline: 'Kertas kopsurat, surat jalan NCR, & brosur perusahaan.',
+                image: '/images/proses-percetakan.webp',
+                specs: [
+                    { label: 'Cetak', value: 'Digital & Offset' },
+                    { label: 'Kertas', value: 'NCR / HVS / Art Paper' },
+                    { label: 'Finishing', value: 'Jilid / Porporasi' }
+                ]
+            }
+        ]
     },
     {
         slug: "barang-general",
