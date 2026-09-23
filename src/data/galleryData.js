@@ -5,7 +5,8 @@ export const GALLERY_CATEGORIES = [
   "Siku Karton",
   "Paper Core",
   "Partisi Karton",
-  "PE Foam & PP Board"
+  "PE Foam & PP Board",
+  "Fasilitas & Operasional"
 ];
 
 export const GALLERY_ITEMS = [
@@ -115,10 +116,42 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 14,
-    title: "Fasilitas Produksi Kemasan Industri",
-    category: "Karton Box",
-    image: "/images/foto-hero.webp",
+    title: "Proses Percetakan Offset & Packaging",
+    category: "Fasilitas & Operasional",
+    image: "/images/proses-percetakan.webp",
+    heightClass: "h-80",
+    description: "Proses pencetakan kemasan dan percetakan komersial menggunakan mesin offset modern."
+  },
+  {
+    id: 15,
+    title: "Area Gudang & Penyimpanan Produk",
+    category: "Fasilitas & Operasional",
+    image: "/images/kondisi-gudang.webp",
     heightClass: "h-96",
-    description: "Area kerja & pergudangan PT Artha Mitra Perwira siap melayani kapasitas produksi skala besar."
+    description: "Pergudangan teratur untuk menjamin kesiapan persediaan dan keamanan barang siap kirim."
+  },
+  {
+    id: 16,
+    title: "Armada Pengiriman & Logistik Industri",
+    category: "Fasilitas & Operasional",
+    image: "/images/pengiriman-barang.webp",
+    heightClass: "h-72",
+    description: "Proses distribusi kemasan karton box dan palet ke lokasi pelanggan tepat waktu."
+  },
+  {
+    id: 17,
+    title: "Ruang Kantor & Pelayanan Administrasi",
+    category: "Fasilitas & Operasional",
+    image: "/images/ruang-kantor.webp",
+    heightClass: "h-80",
+    description: "Lingkungan kerja profesional untuk koordinasi operasional dan pelayanan terbaik bagi pelanggan."
+  },
+  {
+    id: 18,
+    title: "Ruang Rapat & Diskusi Klien",
+    category: "Fasilitas & Operasional",
+    image: "/images/ruang-meeting.webp",
+    heightClass: "h-88",
+    description: "Fasilitas pertemuan untuk konsultasi kebutuhan kemasan kustom dan perencanaan bisnis."
   }
 ];
