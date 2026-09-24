@@ -1,21 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import SubCategoryListItem from '../molecules/SubCategoryListItem';
 import SubCategoryDetailCard from '../molecules/SubCategoryDetailCard';
 import ScrollReveal from '../atoms/ScrollReveal';
 
 export default function ProductSubCategorySection({ subCategories = [], fallbackImage }) {
-  const [activeSubCategory, setActiveSubCategory] = useState(subCategories[0] || null);
-
-  useEffect(() => {
-    if (subCategories && subCategories.length > 0) {
-      setActiveSubCategory(subCategories[0]);
-    }
-  }, [subCategories]);
+  const [selectedId, setSelectedId] = useState(null);
 
   // Conditional Rendering: If product has no sub-categories, do not render section
   if (!subCategories || subCategories.length === 0) {
     return null;
   }
+
+  // Derive active item directly during render without useEffect
+  const activeSubCategory = 
+    subCategories.find(item => (item.id || item.name) === selectedId) || 
+    subCategories[0];
 
   return (
     <ScrollReveal>
@@ -44,8 +43,8 @@ export default function ProductSubCategorySection({ subCategories = [], fallback
               <SubCategoryListItem
                 key={item.id || item.name}
                 item={item}
-                isActive={activeSubCategory?.id === item.id || activeSubCategory?.name === item.name}
-                onClick={setActiveSubCategory}
+                isActive={(activeSubCategory?.id || activeSubCategory?.name) === (item.id || item.name)}
+                onClick={(selected) => setSelectedId(selected.id || selected.name)}
               />
             ))}
           </div>

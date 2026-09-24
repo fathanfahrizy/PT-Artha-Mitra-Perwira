@@ -171,13 +171,13 @@ export default function FeatureCarousel({ features = [] }) {
                       "relative flex items-center gap-3 sm:gap-4 px-5 sm:px-8 lg:px-8 py-3 md:py-4 lg:py-4 rounded-full transition-colors duration-300 text-left group border max-w-full cursor-pointer",
                       isActive
                         ? "bg-[#c2182b] text-white border-[#c2182b] z-10 shadow-lg"
-                        : "bg-transparent text-white/60 border-white/20 hover:border-white/40 hover:text-white"
+                        : "bg-transparent text-white border-white/20 hover:border-white/40 hover:text-white"
                     )}
                   >
                     <div
                       className={cn(
                         "flex items-center justify-center transition-colors duration-300 text-base sm:text-lg shrink-0",
-                        isActive ? "text-white" : "text-white/40"
+                        isActive ? "text-white" : "text-white"
                       )}
                     >
                       <Icon />
