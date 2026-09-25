@@ -87,6 +87,16 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-5 lg:gap-7.5">
             <li>
+              <Link
+                to="/"
+                className="text-[0.9rem] font-semibold text-[#1e293b] hover:text-[#c2182b] transition-colors duration-300 relative group"
+                aria-label="Navigate to Beranda"
+              >
+                Beranda
+                <span className="absolute -bottom-1.25 left-0 w-0 h-0.5 bg-[#c2182b] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
+            <li>
               <button
                 onClick={() => setMenuOpen((o) => !o)}
                 className={`text-[0.9rem] font-semibold flex items-center gap-1.5 transition-colors duration-300 ${menuOpen ? 'text-[#c2182b]' : 'text-[#1e293b] hover:text-[#c2182b]'}`}
@@ -98,7 +108,7 @@ export default function Navbar() {
               </button>
             </li>
             {navLinks.map((link) => {
-              const isRoute = link.href.startsWith('/');
+              const isRoute = link.href.startsWith('/') && !link.href.includes('#');
               return (
                 <li key={link.name}>
                   {isRoute ? (
@@ -152,7 +162,19 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isOpen && (
           <ul className="md:hidden pb-5 space-y-2.5 max-h-[calc(100vh-70px)] overflow-y-auto" role="menu">
-            {/* ACCORDION 1: PRODUK */}
+            {/* 1. BERANDA */}
+            <li role="none">
+              <Link
+                to="/"
+                className="block text-[0.95rem] font-semibold text-[#1e293b] hover:text-[#c2182b] hover:bg-[#f8fafc] px-3.75 py-2.5 rounded-md transition-all duration-300"
+                onClick={closeMobileMenu}
+                role="menuitem"
+              >
+                Beranda
+              </Link>
+            </li>
+
+            {/* 2. ACCORDION 1: PRODUK */}
             <li role="none">
               <button
                 onClick={() => setMobileProdukOpen((o) => !o)}

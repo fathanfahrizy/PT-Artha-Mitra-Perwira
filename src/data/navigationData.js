@@ -2,9 +2,8 @@
 export const waLink = (name) =>
   `https://wa.me/6281315669699?text=${encodeURIComponent(`Halo, saya tertarik dengan ${name}. Mohon informasi penawarannya.`)}`;
 
-// Link navigasi biasa (BERANDA DIHAPUS sesuai permintaan)
+// Link navigasi sampingan (Beranda & Produk ditangani berurutan di Navbar)
 export const navLinks = [
-  { name: 'Beranda', href: '/' },
   { name: 'Tentang', href: '/#tentang' },
   { name: 'Galeri', href: '/galeri' },
   { name: 'Kontak', href: '/#kontak' },
