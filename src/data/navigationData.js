@@ -164,6 +164,26 @@ export const MENU_CATEGORIES = [
           { label: 'Ukuran', value: 'Custom' },
           { label: 'Fungsi', value: 'Proteksi produk' }
         ]
+      },
+      {
+          id: 'partisi-lubang',
+          name: 'Partisi Lubang',
+          tagline: 'Partisi dengan lubang untuk ventilasi dan mengurangi berat.',
+          specs: [
+              { label: 'Jenis', value: 'Partisi Lubang' },
+              { label: 'Ukuran', value: 'Custom' },
+              { label: 'Warna', value: 'Natural kraft' }
+          ]
+      },
+      {
+          id: 'partisi-sisip',
+          name: 'Partisi Sisip',
+          tagline: 'Partisi dengan sisipan untuk mengurangi berat.',
+          specs: [
+              { label: 'Jenis', value: 'Partisi Sisip' },
+              { label: 'Ukuran', value: 'Custom' },
+              { label: 'Warna', value: 'Natural kraft' }
+          ]
       }
     ]
   },

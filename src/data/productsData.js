@@ -212,7 +212,42 @@ export const PRODUCTS = [
         image: "/images/foto-partisi-karton.webp",
         tagline: 'Sekat pelindung interior box untuk menjaga produk tetap utuh tanpa benturan.',
         description: 'Partisi Karton berfungsi sebagai sekat pemisah di dalam kotak utama untuk mencegah produk saling berbenturan dan lecet selama transit. Sangat direkomendasikan untuk pengemasan produk pecah belah, komponen otomotif presisi, botol kaca, atau barang elektronik. Kami menyesuaikan grid dan ketebalan partisi sesuai dengan dimensi produk Anda.',
-        specs: SPECS_PARTISI_KARTON
+        specs: SPECS_PARTISI_KARTON,
+        subCategories: [
+            {
+                id: 'partisi-grid',
+                name: 'Partisi Grid',
+                tagline: 'Partisi dengan grid untuk mengurangi berat.',
+                image: '/images/foto-partisi-karton.webp',
+                specs: [
+                    { label: 'Jenis', value: 'Partisi Grid' },
+                    { label: 'Ukuran', value: 'Custom' },
+                    { label: 'Warna', value: 'Natural kraft' }
+                ]
+            },
+            {
+                id: 'partisi-lubang',
+                name: 'Partisi Lubang',
+                tagline: 'Partisi dengan lubang untuk ventilasi dan mengurangi berat.',
+                image: '/images/foto-partisi-paper-2.webp',
+                specs: [
+                    { label: 'Jenis', value: 'Partisi Lubang' },
+                    { label: 'Ukuran', value: 'Custom' },
+                    { label: 'Warna', value: 'Natural kraft' }
+                ]
+            },
+            {
+                id: 'partisi-sisip',
+                name: 'Partisi Sisip',
+                tagline: 'Partisi dengan sisipan untuk mengurangi berat.',
+                image: '/images/foto-partisi-paper.webp',
+                specs: [
+                    { label: 'Jenis', value: 'Partisi Sisip' },
+                    { label: 'Ukuran', value: 'Custom' },
+                    { label: 'Warna', value: 'Natural kraft' }
+                ]
+            }
+        ]
     },
     {
         slug: "pe-foam",
@@ -240,35 +275,68 @@ export const PRODUCTS = [
         subCategories: [
             {
                 id: 'inner-box-astons',
-                name: 'Inner Box & Retail Box',
-                tagline: 'Dus kemasan cetak untuk obat, kosmetik, & produk retail.',
+                name: 'Inner Box & Retail Packaging',
+                tagline: 'Dus kemasan cetak presisi untuk obat, retail, & produk komersial.',
                 image: '/images/aston-putih.webp',
                 specs: [
-                    { label: 'Material', value: 'Duplex / Ivory' },
-                    { label: 'Finishing', value: 'Varnish / Laminasi' },
-                    { label: 'Cetak', value: 'Offset Full Color' }
+                    { label: 'Material', value: 'Duplex / Ivory / Kraft' },
+                    { label: 'Finishing', value: 'Varnish Glossy / Doff' },
+                    { label: 'Cetak', value: 'Offset High Resolution' }
+                ]
+            },
+            {
+                id: 'kemasan-agrokimia',
+                name: 'Kemasan Botol & Agrokimia',
+                tagline: 'Box pelindung botol cairan pupuk, kimia, & sampel industri.',
+                image: '/images/bimagro-50-ml.webp',
+                specs: [
+                    { label: 'Konstruksi', value: 'Single Wall / Duplex Tebal' },
+                    { label: 'Fungsi', value: 'Proteksi botol & cairan' },
+                    { label: 'Cetak', value: 'Full Color Offset' }
                 ]
             },
             {
                 id: 'box-kuliner',
-                name: 'Box Makanan & Kuliner',
-                tagline: 'Dus makanan food-grade custom desain untuk resto & catering.',
+                name: 'Box Makanan & Franchise Kuliner',
+                tagline: 'Dus makanan food-grade custom desain untuk resto, kebab, & catering.',
                 image: '/images/kebab.webp',
                 specs: [
-                    { label: 'Bahan', value: 'Food Grade Paper' },
-                    { label: 'Tipe', value: 'Lunch Box / Food Pail' },
-                    { label: 'Fitur', value: 'Anti Bocor & Minyak' }
+                    { label: 'Bahan', value: 'Food Grade Paper (Greaseproof)' },
+                    { label: 'Tipe', value: 'Lunch Box / Food Pail / Takeaway' },
+                    { label: 'Fitur', value: 'Tahan minyak & cairan' }
+                ]
+            },
+            {
+                id: 'box-parfum',
+                name: 'Box Kosmetik & Parfum Exclusive',
+                tagline: 'Kemasan mewah dengan finishing presisi untuk parfum & kecantikan.',
+                image: '/images/parfum.webp',
+                specs: [
+                    { label: 'Kertas', value: 'Ivory / Art Carton Premium' },
+                    { label: 'Finishing', value: 'Foil Gold/Silver, Emboss, Doff' },
+                    { label: 'Desain', value: 'Custom cetak eksklusif' }
+                ]
+            },
+            {
+                id: 'kemasan-industrial',
+                name: 'Kemasan Die-Cut Produk Industri',
+                tagline: 'Kemasan karton presisi potongan die-cut untuk suku cadang & barang pabrik.',
+                image: '/images/nse-superior.webp',
+                specs: [
+                    { label: 'Model', value: 'Die-Cut Locking Box' },
+                    { label: 'Cetak', value: 'Custom brand & instruksi' },
+                    { label: 'Kekuatan', value: 'Tahan tekanan & tumpukan' }
                 ]
             },
             {
                 id: 'company-profile',
-                name: 'Surat Jalan & Promosi',
-                tagline: 'Kertas kopsurat, surat jalan NCR, & brosur perusahaan.',
+                name: 'Surat Jalan, Kop Surat & Promosi',
+                tagline: 'Kertas kopsurat, nota/surat jalan NCR, & brosur perusahaan.',
                 image: '/images/proses-percetakan.webp',
                 specs: [
-                    { label: 'Cetak', value: 'Digital & Offset' },
+                    { label: 'Cetak', value: 'Digital & Offset Modern' },
                     { label: 'Kertas', value: 'NCR / HVS / Art Paper' },
-                    { label: 'Finishing', value: 'Jilid / Porporasi' }
+                    { label: 'Finishing', value: 'Jilid / Porporasi / Nomerasi' }
                 ]
             }
         ]
