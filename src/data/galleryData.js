@@ -218,5 +218,45 @@ export const GALLERY_ITEMS = [
     image: "/images/spectrum.webp",
     heightClass: "h-84",
     description: "Solusi cetak kemasan produk komersial beragam ukuran dan desain custom."
+  },
+  {
+    id: 27,
+    title: "Inner Box Aston Biru Premium",
+    category: "Percetakan Umum",
+    image: "/images/aston-biru.webp",
+    heightClass: "h-72",
+    description: "Kemasan inner box karton offset warna biru presisi tinggi untuk produk komersial & farmasi."
+  },
+  {
+    id: 28,
+    title: "Kemasan Cetak Custom Bank Aesa",
+    category: "Percetakan Umum",
+    image: "/images/bankaesa.webp",
+    heightClass: "h-88",
+    description: "Box cetak branding korporat presisi tinggi untuk kemasan souvenir & merchandise."
+  },
+  {
+    id: 29,
+    title: "Box Kemasan Emping PD Laksana",
+    category: "Percetakan Umum",
+    image: "/images/emping-pd-laksana.webp",
+    heightClass: "h-80",
+    description: "Dus kemasan cetak makanan tradisional & snack kuliner food-grade tahan lama."
+  },
+  {
+    id: 30,
+    title: "Inner Box & Kemasan Cetak Fresia",
+    category: "Percetakan Umum",
+    image: "/images/fresia.webp",
+    heightClass: "h-64",
+    description: "Cetak kemasan karton retail dengan cetakan offset tajam dan desain eye-catching."
+  },
+  {
+    id: 31,
+    title: "Box Makanan & Es Krim Food Grade",
+    category: "Percetakan Umum",
+    image: "/images/ice-cream.webp",
+    heightClass: "h-96",
+    description: "Kemasan dus khusus makanan beku, es krim, dan olahan kuliner tahan dingin & bebas bocor."
   }
 ];

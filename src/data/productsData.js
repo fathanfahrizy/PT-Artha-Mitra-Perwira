@@ -275,13 +275,57 @@ export const PRODUCTS = [
         subCategories: [
             {
                 id: 'inner-box-astons',
-                name: 'Inner Box & Retail Packaging',
+                name: 'Inner Box Aston Biru & Putih',
                 tagline: 'Dus kemasan cetak presisi untuk obat, retail, & produk komersial.',
-                image: '/images/aston-putih.webp',
+                image: '/images/aston-biru.webp',
                 specs: [
                     { label: 'Material', value: 'Duplex / Ivory / Kraft' },
                     { label: 'Finishing', value: 'Varnish Glossy / Doff' },
                     { label: 'Cetak', value: 'Offset High Resolution' }
+                ]
+            },
+            {
+                id: 'kemasan-bankaesa',
+                name: 'Box Branding Bank Aesa',
+                tagline: 'Kemasan cetak kustom korporat & merchandise beridentitas kuat.',
+                image: '/images/bankaesa.webp',
+                specs: [
+                    { label: 'Model', value: 'Custom Box Gift / Branding' },
+                    { label: 'Cetak', value: 'Full Color Offset Printing' },
+                    { label: 'Finishing', value: 'Laminasi Doff & Foil Accent' }
+                ]
+            },
+            {
+                id: 'box-emping-laksana',
+                name: 'Box Kemasan Emping PD Laksana',
+                tagline: 'Dus cetak makanan tradisional & oleh-oleh dengan perlindungan ekstra.',
+                image: '/images/emping-pd-laksana.webp',
+                specs: [
+                    { label: 'Bahan', value: 'Ivory / Duplex Premium' },
+                    { label: 'Fitur', value: 'Bahan Kokoh & Higienis' },
+                    { label: 'Cetak', value: 'High Detail Graphic' }
+                ]
+            },
+            {
+                id: 'kemasan-fresia',
+                name: 'Inner Box & Kemasan Retail Fresia',
+                tagline: 'Dus produk retail elegan dengan estetika tinggi dan presisi bentuk.',
+                image: '/images/fresia.webp',
+                specs: [
+                    { label: 'Material', value: 'Ivory / Art Carton' },
+                    { label: 'Tipe Cut', value: 'Die-Cut Presisi' },
+                    { label: 'Laminasi', value: 'Glossy / Matte Varnish' }
+                ]
+            },
+            {
+                id: 'box-ice-cream',
+                name: 'Box Es Krim & Frozen Food',
+                tagline: 'Kemasan khusus produk beku & kuliner tahan dingin bebas bocor.',
+                image: '/images/ice-cream.webp',
+                specs: [
+                    { label: 'Bahan', value: 'Food Grade Moisture-Resistant' },
+                    { label: 'Fitur', value: 'Tahan Dingin & Kelembaban' },
+                    { label: 'Aplikasi', value: 'Es Krim, Frozen Food, Dessert' }
                 ]
             },
             {
@@ -297,7 +341,7 @@ export const PRODUCTS = [
             },
             {
                 id: 'box-kuliner',
-                name: 'Box Makanan & Franchise Kuliner',
+                name: 'Box Makanan & Franchise Kebab',
                 tagline: 'Dus makanan food-grade custom desain untuk resto, kebab, & catering.',
                 image: '/images/kebab.webp',
                 specs: [
