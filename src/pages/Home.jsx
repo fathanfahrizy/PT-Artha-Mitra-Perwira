@@ -1,5 +1,6 @@
 import HeroSection from '@/components/organisms/HeroSection';
 import ProductsSection from '@/components/organisms/ProductsSection';
+import ClientsSection from '@/components/organisms/ClientsSection';
 import AboutSection from '@/components/organisms/AboutSection';
 import ContactSection from '@/components/organisms/ContactSection';
 import { HERO_BADGES } from '@/data/homeData';
@@ -23,6 +24,7 @@ export default function Home() {
         imageSrc="/images/foto-hero.webp"
       />
       <ProductsSection />
+      <ClientsSection />
       <AboutSection />
       <ContactSection />
     </div>
