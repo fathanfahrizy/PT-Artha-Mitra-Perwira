@@ -228,11 +228,11 @@ export const MENU_APPLICATIONS = [
   {
     id: 'percetakan-umum',
     name: 'Percetakan Umum',
-    desc: 'Cetak Surat jalan, Inner Box, Box Makanan, Kartu Nama Kop surat, Company profile, Undangan, dll.'
+    desc: 'Kami melayani cetak berbagai kebutuhan bisnis dan personal dengan kualitas terbaik dan presisi tinggi, mulai dari perlengkapan logistik dan administrasi seperti surat jalan dan kop surat, hingga solusi kemasan produk seperti inner box dan box makanan yang menarik serta aman. Selain itu, kami juga siap memenuhi kebutuhan identitas perusahaan dan promosi Anda lewat pencetakan kartu nama profesional dan company profile, hingga penyediaan undangan untuk berbagai acara penting Anda.'
   },
   {
     id: 'barang-general',
     name: 'Barang General',
-    desc: 'Membuat PE Foam, Roda Lory, Plastik Bubble, Bucket Impraboard, dll.'
+    desc: 'Kami menyediakan berbagai kebutuhan umum untuk mendukung kelancaran operasional bisnis Anda. Mulai dari PE Foam dan Plastik Bubble untuk perlindungan barang selama pengiriman, Roda Lory untuk mobilitas logistik yang efisien, hingga Bucket Impraboard untuk kebutuhan penyimpanan dan presentasi produk yang solid dan profesional.'
   }
 ];
