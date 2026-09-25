@@ -347,6 +347,52 @@ export const PRODUCTS = [
         image: "/images/kondisi-gudang.webp",
         tagline: 'Penyedia perlengkapan kemasan & aksesoris industri lengkap dan terpercaya.',
         description: 'Kami memenuhi berbagai kebutuhan perlengkapan & pendukung industri seperti PE Foam, Roda Lory, Plastik Bubble Wrap, Bucket Impraboard, dan aksesoris kemasan lainnya. Dirancang untuk meningkatkan efisiensi, keamanan, dan keandalan operasional pabrik mau pun pergudangan Anda.',
-        specs: SPECS_BARANG_GENERAL
+        specs: SPECS_BARANG_GENERAL,
+        subCategories: [
+            {
+                id: 'pe-foam-general',
+                name: 'PE Foam & Busa Pelindung',
+                tagline: 'Material busa pelindung benturan & pelapis anti-gores barang presisi.',
+                image: '/images/foto-pe-foam-besar.webp',
+                specs: [
+                    { label: 'Ketebalan', value: '1 mm - 10 mm (Custom)' },
+                    { label: 'Format', value: 'Roll / Lembaran / Kantong' },
+                    { label: 'Fungsi', value: 'Peredam kejut & anti gores' }
+                ]
+            },
+            {
+                id: 'bubble-wrap',
+                name: 'Plastik Bubble Wrap',
+                tagline: 'Gelembung udara pelindung ekstra untuk keamanan kargo & e-commerce.',
+                image: '/images/foto-pe-foam.webp',
+                specs: [
+                    { label: 'Ukuran Roll', value: '1.25 m x 50 m / Custom' },
+                    { label: 'Tipe', value: 'Single / Double Bubble' },
+                    { label: 'Warna', value: 'Transparan / Hitam' }
+                ]
+            },
+            {
+                id: 'bucket-impraboard',
+                name: 'Bucket & Container Impraboard',
+                tagline: 'Wadah penyimpanan & tumpukan part industri anti-air yang tahan lama.',
+                image: '/images/foto-pp-board-tumpuk.webp',
+                specs: [
+                    { label: 'Material', value: 'PP Corrugated Board' },
+                    { label: 'Keunggulan', value: 'Anti Air & Kimia (Reusable)' },
+                    { label: 'Tipe Box', value: 'Returnable Box / Storage Bucket' }
+                ]
+            },
+            {
+                id: 'roda-lory',
+                name: 'Roda Lory & Aksesoris Logistik',
+                tagline: 'Roda troli & lory beban berat untuk efisiensi mobilitas pergudangan.',
+                image: '/images/pengiriman-barang.webp',
+                specs: [
+                    { label: 'Kapasitas', value: 'Beban Ringan s/d Heavy Duty' },
+                    { label: 'Material Roda', value: 'Karet / Nylon / Polyurethane' },
+                    { label: 'Aplikasi', value: 'Troli Pabrik & Lory Pergudangan' }
+                ]
+            }
+        ]
     }
 ];
