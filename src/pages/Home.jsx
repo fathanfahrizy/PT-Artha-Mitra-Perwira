@@ -23,8 +23,8 @@ export default function Home() {
         badges={HERO_BADGES}
         imageSrc="/images/foto-hero.webp"
       />
-      <ProductsSection />
       <ClientsSection />
+      <ProductsSection />
       <AboutSection />
       <ContactSection />
     </div>
