@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaHandshake, FaTableCells, FaArrowsLeftRight, FaCheck } from 'react-icons/fa6';
+import { FaHandshake, FaCheck } from 'react-icons/fa6';
 import { CLIENTS } from '../../data/clientsData';
 import ClientLogoCard from '../molecules/ClientLogoCard';
 import ScrollReveal from '../atoms/ScrollReveal';
@@ -14,7 +14,7 @@ import ScrollReveal from '../atoms/ScrollReveal';
  * 3. Toggle switch untuk melihat semua 24 logo dalam bentuk Grid responsif.
  */
 export default function ClientsSection() {
-  const [viewMode, setViewMode] = useState('marquee'); // 'marquee' | 'grid'
+  const [viewMode] = useState('marquee'); // 'marquee' | 'grid'
 
   // Pisahkan 24 logo menjadi 2 baris (masing-masing 12 logo)
   const row1 = CLIENTS.slice(0, 12);
@@ -47,34 +47,6 @@ export default function ClientsSection() {
           <p className="max-w-2xl mx-auto text-slate-600 text-sm md:text-base leading-relaxed">
             Menjadi mitra terpercaya penyedia karton box berkualitas, percetakan umum presisi, dan perlengkapan industri bagi berbagai sektor manufaktur, farmasi, retail, serta F&B.
           </p>
-
-          {/* View Mode Toggle Buttons */}
-          <div className="flex items-center justify-center gap-2 mt-6">
-            <button
-              onClick={() => setViewMode('marquee')}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 cursor-pointer ${
-                viewMode === 'marquee'
-                  ? 'bg-[#0a1428] text-white shadow-xs'
-                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-              }`}
-              aria-label="Tampilkan animasi marquee"
-            >
-              <FaArrowsLeftRight className="text-[11px]" />
-              <span>Animasi Berjalan</span>
-            </button>
-            <button
-              onClick={() => setViewMode('grid')}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 cursor-pointer ${
-                viewMode === 'grid'
-                  ? 'bg-[#0a1428] text-white shadow-xs'
-                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-              }`}
-              aria-label="Tampilkan semua logo grid"
-            >
-              <FaTableCells className="text-[11px]" />
-              <span>Semua Logo ({CLIENTS.length})</span>
-            </button>
-          </div>
         </div>
 
         {/* --- VIEW MODE 1: DUAL-TRACK INFINITE MARQUEE --- */}
@@ -113,21 +85,6 @@ export default function ClientsSection() {
             <p className="text-center text-xs text-slate-400 mt-4 italic">
               * Arahkan kursor / sentuh logo untuk menghentikan animasi sejenak
             </p>
-          </div>
-        )}
-
-        {/* --- VIEW MODE 2: RESPONSIVE GRID --- */}
-        {viewMode === 'grid' && (
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
-              {CLIENTS.map((client) => (
-                <ClientLogoCard
-                  key={client.id}
-                  client={client}
-                  className="w-full h-24"
-                />
-              ))}
-            </div>
           </div>
         )}
 
