@@ -7,7 +7,7 @@ A B2B company profile website for PT Artha Mitra Perwira, a corrugated box manuf
 | Technology | Description |
 |---|---|
 | Vite | Frontend build tool and development server |
-| React 18 | UI library (JSX, plain JavaScript) |
+| React 19 | UI library (JSX, plain JavaScript) |
 | React Router | Client-side routing for multi-page architecture |
 | Tailwind CSS v4 | Utility-first styling framework |
 | react-icons | Iconography (Font Awesome 6) |
@@ -42,12 +42,17 @@ PT-Artha/
 │   │   ├── navigationData.js # Navigation links and mega menu categories
 │   │   ├── homeData.js       # Homepage content (Hero, About, Stats)
 │   │   ├── productsData.js   # Product catalogs and specifications
+│   │   │                     # (9 slugs: karton-box, pallet-karton, siku-karton,
+│   │   │                     #  paper-core, partisi-karton, pe-foam, pp-board,
+│   │   │                     #  percetakan-umum, barang-general)
 │   │   ├── contactData.js    # Contact information and map embeds
+│   │   ├── galleryData.js    # Gallery items and categories
+│   │   ├── clientsData.js    # Client logos
 │   │   └── footerData.js     # Footer feature strips
 │   │
-│   ├── pages/              # Page-level components
-│   │   ├── Home.jsx        # Landing page
-│   │   └── Product.jsx     # Product showcase page
+│   ├── pages/              # Page-level components (Home, Product, ProductDetail, Gallery)
+│   │                       # Routes: /, /produk, /produk/:slug, /galeri —
+│   │                       # keep public/sitemap.xml in sync when routes change
 │   │
 │   ├── App.jsx             # Root application component and routing configuration
 │   ├── main.jsx            # Application entry point
@@ -97,5 +102,13 @@ PT-Artha/
 - Google Maps Pin: https://maps.app.goo.gl/LV73HXgJHfVhTJpi9
 - WhatsApp Marketing: https://wa.me/6281315669699
 - Email: mailto:marketing.arthamitra@gmail.com
+- Company Profile PDF: https://drive.google.com/file/d/1XCRxYTVC5mwNXM3cMI9BP1TvPZP84_Aa/view?usp=sharing (linked from AboutSection; not stored in repo)
+
+## SEO
+
+- `public/robots.txt` allows all crawlers, points to sitemap.
+- `public/sitemap.xml` lists /, /produk, /galeri + all 9 /produk/:slug URLs (all on https://arthamitraperwira.vercel.app).
+- `index.html` has canonical + absolute og:image/twitter:image for link previews.
+- When routes or product slugs change, update sitemap.xml + README slug list above.
 
 *Note: The shortened Google Maps URL cannot be embedded in an iframe. For embedding, utilize the `mapUrl` format located within `src/data/contactData.js`.*
