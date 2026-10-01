@@ -268,7 +268,7 @@ export const PRODUCTS = [
     {
         slug: "percetakan-umum",
         title: "PERCETAKAN UMUM",
-        image: "/images/proses-percetakan.webp",
+        image: "/images/kondisi-gudang.webp",
         tagline: 'Layanan percetakan komersial & kemasan cetak berkualitas tinggi untuk berbagai kebutuhan bisnis Anda.',
         description: 'Kami melayani berbagai kebutuhan percetakan umum mulai dari Surat Jalan, Inner Box, Box Makanan, Kartu Nama, Kop Surat, Company Profile, Undangan, hingga cetakan promosi khusus. Menggunakan mesin cetak offset & digital modern untuk menjamin ketajaman warna, kualitas bahan, dan presisi hasil cetakan.',
         specs: SPECS_PERCETAKAN_UMUM,
@@ -376,7 +376,7 @@ export const PRODUCTS = [
                 id: 'company-profile',
                 name: 'Surat Jalan, Kop Surat & Promosi',
                 tagline: 'Kertas kopsurat, nota/surat jalan NCR, & brosur perusahaan.',
-                image: '/images/proses-percetakan.webp',
+                image: '/images/kondisi-gudang.webp',
                 specs: [
                     { label: 'Cetak', value: 'Digital & Offset Modern' },
                     { label: 'Kertas', value: 'NCR / HVS / Art Paper' },
