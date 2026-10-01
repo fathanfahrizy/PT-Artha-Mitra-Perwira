@@ -117,11 +117,11 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 14,
-    title: "Proses Percetakan Offset & Packaging",
+    title: "Area Depan Gudang",
     category: "Fasilitas & Operasional",
-    image: "/images/proses-percetakan.webp",
+    image: "/images/foto-hero.webp",
     heightClass: "h-80",
-    description: "Proses pencetakan kemasan dan percetakan komersial menggunakan mesin offset modern."
+    description: "Pergudangan teratur untuk menjamin kesiapan persediaan dan keamanan barang siap kirim."
   },
   {
     id: 15,
